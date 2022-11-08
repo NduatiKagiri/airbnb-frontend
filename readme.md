@@ -1,4 +1,4 @@
-# Vite + React + Tailwind CSS starter
+# airbnb clone
 
 Inspired by [posva's](https://github.com/posva) [vite-tailwind-starter](https://github.com/posva/vite-tailwind-starter)
 
