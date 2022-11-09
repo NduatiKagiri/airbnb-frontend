@@ -2,6 +2,7 @@ import React,{useState}from 'react'
 import "react-pro-sidebar/dist/css/styles.css";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import SideBarItem from './SideBarItem'
+import { MdOutlineMenu } from "react-icons/md";
 
 function OnboardModal() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -13,27 +14,49 @@ function OnboardModal() {
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            icon={isCollapsed ? <MdOutlineMenu /> : undefined}
             style={{ margin: "10px 0 20px 0"}}>
             {!isCollapsed && (
               <div >
                 <h1>
                   ADMIN
                 </h1>
-                <Button onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
-                </Button>
+                <button onClick={() => setIsCollapsed(!isCollapsed)}>
+                  <MdOutlineMenu />
+                </button>
               </div>
             )}
           </MenuItem>
 
           <div>
               <SideBarItem
-              title="Models"
-              to ="/model"
+              title="Home"
+              to ="/Home"
               selected={selected}
-              setSelected={setSelected}
+              setSelected= {setSelected}
+              icon={ <MdOutlineMenu/>}
               />
+                 <SideBarItem
+   title="Home"
+   to ="/Home"
+   selected={selected}
+   setSelected= {setSelected}
+   icon={ <MdOutlineMenu/>}
+   />
+      <SideBarItem
+   title="Home"
+   to ="/Home"
+   selected={selected}
+   setSelected= {setSelected}
+   icon={ <MdOutlineMenu/>}
+   />
+      <SideBarItem
+   title="Home"
+   to ="/Home"
+   selected={selected}
+   setSelected= {setSelected}
+   icon={ <MdOutlineMenu/>}
+   />
           </div>
         </Menu>
       </ProSidebar>
