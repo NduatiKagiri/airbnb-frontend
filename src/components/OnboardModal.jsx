@@ -1,99 +1,167 @@
-import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
+import React from 'react'
+import "react-pro-sidebar/dist/css/styles.css";
+import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 
-import styles from '../styles';
-import { CustomButton } from '.';
-import { useGlobalContext } from '../context';
-import { GetParams, SwitchNetwork } from '../utils/onboard.js';
-
-const OnboardModal = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const { updateCurrentWalletAddress } = useGlobalContext();
-  const [step, setStep] = useState(-1);
-
-  async function resetParams() {
-    const currentStep = await GetParams();
-    setStep(currentStep.step);
-    setIsOpen(currentStep.step !== -1);
-  }
-
-  useEffect(() => {
-    resetParams();
-
-    window?.ethereum?.on('chainChanged', () => {
-      resetParams();
-    });
-
-    window?.ethereum?.on('accountsChanged', () => {
-      resetParams();
-    });
-  }, []);
-
-  const generateStep = (st) => {
-    switch (st) {
-      case 0:
-        return (
-          <>
-            <p className={styles.modalText}>
-              You don't have Core Wallet installed!
-            </p>
-            <CustomButton
-              title="Download Core"
-              handleClick={() => window.open('https://core.app/', '_blank')}
-            />
-          </>
-        );
-
-      case 1:
-        return (
-          <>
-            <p className={styles.modalText}>
-              You haven't connected your account to Core Wallet!
-            </p>
-            <CustomButton
-              title="Connect Account"
-              handleClick={updateCurrentWalletAddress}
-            />
-          </>
-        );
-
-      case 2:
-        return (
-          <>
-            <p className={styles.modalText}>
-              You're on a different network. Switch to Fuji C-Chain.
-            </p>
-            <CustomButton title="Switch" handleClick={SwitchNetwork} />
-          </>
-        );
-
-      case 3:
-        return (
-          <>
-            <p className={styles.modalText}>
-              Oops, you don't have AVAX tokens in your account
-            </p>
-            <CustomButton
-              title="Grab some test tokens"
-              handleClick={() => window.open('https://faucet.avax.network/', '_blank')}
-            />
-          </>
-        );
-
-      default:
-        return <p className={styles.modalText}>Good to go!</p>;
-    }
-  };
-
+function OnboardModal() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [selected, setSelected] = useState("Dashboard");
   return (
-    <Modal
-      isOpen={modalIsOpen}
-      className={`absolute inset-0 ${styles.flexCenter} flex-col ${styles.glassEffect}`}
-      overlayClassName="Overlay"
-    >
-      {generateStep(step)}
-    </Modal>
-  );
-};
+    <div>
 
-export default OnboardModal;
+<ProSidebar collapsed={isCollapsed}>
+        <Menu iconShape="square">
+          {/* LOGO AND MENU ICON */}
+          <MenuItem
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            style={{
+              margin: "10px 0 20px 0",
+              color: colors.grey[100],
+            }}
+          >
+            {!isCollapsed && (
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                ml="15px"
+              >
+                <Typography variant="h3" color={colors.grey[100]}>
+                  ADMIN
+                </Typography>
+                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                  <MenuOutlinedIcon />
+                </IconButton>
+              </Box>
+            )}
+          </MenuItem>
+
+          {!isCollapsed && (
+            <Box mb="10px">
+              <Box display="flex" justifyContent="center" alignItems="center"    >
+                <Image
+                  alt="profile-user"
+                  width={100}
+                  height={80}
+                  src={ 'https://i.ibb.co/WnxQ4rs/travis.jpg'}
+                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                  loading="eager"
+                  layout="fixed"
+                  />
+              </Box>
+              <Box textAlign="center">
+                <Typography
+                  variant="h2"
+                  color={colors.grey[100]}
+                  fontWeight="bold"
+                  sx={{ m: "10px 0 0 0" }}
+                >
+                  Ed Roh
+                </Typography>
+                <Typography variant="h5" color={colors.greenAccent[500]}>
+                  VP Fancy Admin
+                </Typography>
+              </Box>
+            </Box>
+          )}
+
+          <Box paddingLeft={isCollapsed ? undefined : "10%"}
+          display="flex" flexDirection='column'  justifyContent="cente" columnGap='200'
+
+          >
+
+                <MenuItem
+              icon={<HomeOutlinedIcon />}
+              onClick={() => setSelected()}
+              active={selected}
+              style={{
+                color: colors.grey[100], }}>
+                    <Typography> Dashboard </Typography>
+               <Link href='/' >  </Link>
+               </MenuItem>
+
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+                pages
+            </Typography>
+
+            <MenuItem
+            icon={<PeopleOutlinedIcon />}
+            onClick={() => setSelected()}
+            active={selected}
+           style={{
+           color: colors.grey[100], }}>
+        <Typography> Student </Typography>
+            <Link href='/student' >  </Link>
+       </MenuItem>
+
+
+
+       <MenuItem
+            icon={<ContactsOutlinedIcon  />}
+            onClick={() => setSelected()}
+            active={selected}
+           style={{
+           color: colors.grey[100], }}>
+        <Typography> Teacher </Typography>
+            <Link href='/teacher' >  </Link>
+       </MenuItem>
+
+       <MenuItem
+     icon={<CalendarTodayOutlinedIcon />}
+     onClick={() => setSelected()}
+     active={selected}
+    style={{
+    color: colors.grey[100], }}>
+      <Typography> Event</Typography>
+          <Link href='/event' >  </Link>
+      </MenuItem>
+
+            <MenuItem
+      icon={<CalendarTodayOutlinedIcon />}
+      onClick={() => setSelected()}
+      active={selected}
+      style={{
+      color: colors.grey[100], }}>
+      <Typography> Finance</Typography>
+          <Link href='/finance' >  </Link>
+      </MenuItem>
+
+
+                <MenuItem
+                icon={<PersonOutlinedIcon />}
+                onClick={() => setSelected()}
+                active={selected}
+                style={{
+                color: colors.grey[100], }}>
+                <Typography> User</Typography>
+                    <Link href='/user' >  </Link>
+                </MenuItem>
+
+
+
+
+            <MenuItem
+            icon={<HelpOutlineOutlinedIcon />}
+            onClick={() => setSelected()}
+            active={selected}
+            style={{
+            color: colors.grey[100], }}>
+            <Typography>Latest Activity</Typography>
+                <Link href='/activity' >  </Link>
+            </MenuItem>
+
+
+
+
+          </Box>
+        </Menu>
+      </ProSidebar>
+    </div>
+  )
+}
+
+export default OnboardModal
