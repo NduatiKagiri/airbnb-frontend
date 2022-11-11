@@ -3,12 +3,13 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import SideBarItem from './SideBarItem'
 import { MdOutlineMenu } from "react-icons/md";
+import './SideBar.css';
 
 function OnboardModal() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
   return (
-    <div>
+    <div id='header'>
          <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
@@ -17,9 +18,9 @@ function OnboardModal() {
             icon={isCollapsed ? <MdOutlineMenu /> : undefined}
             style={{ margin: "10px 0 20px 0"}}>
             {!isCollapsed && (
-              <div >
-                <h1>
-                  ADMIN
+              <div className=' flex flex-row justify-between'>
+                <h1 className=' font-rajdhan -rotate-12 underline text-lg' >
+              Vespa
                 </h1>
                 <button onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MdOutlineMenu />
@@ -27,36 +28,42 @@ function OnboardModal() {
               </div>
             )}
           </MenuItem>
+          <div className=' flex flex-col mt-20 justify-center'>
 
-          <div>
               <SideBarItem
-              title="Home"
+              title="MODELS"
               to ="/Home"
               selected={selected}
               setSelected= {setSelected}
-              icon={ <MdOutlineMenu/>}
-              />
+              icon={ <MdOutlineMenu/>} />
+
                  <SideBarItem
-   title="Home"
-   to ="/Home"
-   selected={selected}
-   setSelected= {setSelected}
-   icon={ <MdOutlineMenu/>}
-   />
-      <SideBarItem
-   title="Home"
-   to ="/Home"
-   selected={selected}
-   setSelected= {setSelected}
-   icon={ <MdOutlineMenu/>}
-   />
-      <SideBarItem
-   title="Home"
-   to ="/Home"
-   selected={selected}
-   setSelected= {setSelected}
-   icon={ <MdOutlineMenu/>}
-   />
+                title="LIFESTYLE"
+                to ="/Home"
+                selected={selected}
+                setSelected= {setSelected}
+                 icon={ <MdOutlineMenu/>}/>
+
+                  <SideBarItem
+                 title="SHOP"
+                to ="/Home"
+                selected={selected}
+               setSelected= {setSelected}
+                icon={ <MdOutlineMenu/>}/>
+
+                    <SideBarItem
+                title="TEST DRIVE"
+                to ="/Home"
+                selected={selected}
+                setSelected= {setSelected}
+                icon={ <MdOutlineMenu/>} />
+
+
+
+
+
+
+
           </div>
         </Menu>
       </ProSidebar>

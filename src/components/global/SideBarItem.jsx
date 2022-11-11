@@ -10,9 +10,7 @@ return (
 
   <MenuItem
     active={selected === title}
-    style={{
-
-    }}
+    style={{ marginTop : "10px"}}
     onClick={() => setSelected(title)}
     icon={icon}
   >
