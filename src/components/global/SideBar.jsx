@@ -2,7 +2,10 @@ import React,{useState}from 'react'
 import "react-pro-sidebar/dist/css/styles.css";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import SideBarItem from './SideBarItem'
-import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineMenu,MdHome } from "react-icons/md";
+import {RiShoppingBag2Fill} from "react-icons/ri"
+import {HiCamera} from "react-icons/hi2"
+import {FcShop} from "react-icons/fc"
 import './SideBar.css';
 
 function OnboardModal() {
@@ -31,32 +34,32 @@ function OnboardModal() {
           <div className=' flex flex-col mt-20 justify-center'>
 
               <SideBarItem
-              title="MODELS"
+              title="HOUSES"
               to ="/Home"
               selected={selected}
               setSelected= {setSelected}
-              icon={ <MdOutlineMenu/>} />
+              icon={ <FcShop/>} />
 
                  <SideBarItem
                 title="LIFESTYLE"
                 to ="/Home"
                 selected={selected}
                 setSelected= {setSelected}
-                 icon={ <MdOutlineMenu/>}/>
+                 icon={ <HiCamera/>}/>
 
                   <SideBarItem
                  title="SHOP"
                 to ="/Home"
                 selected={selected}
                setSelected= {setSelected}
-                icon={ <MdOutlineMenu/>}/>
+                icon={ <RiShoppingBag2Fill/>}/>
 
                     <SideBarItem
-                title="TEST DRIVE"
+                title="CHECK HOUSE"
                 to ="/Home"
                 selected={selected}
                 setSelected= {setSelected}
-                icon={ <MdOutlineMenu/>} />
+                icon={ <MdHome/>} />
 
 
 
