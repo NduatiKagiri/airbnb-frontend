@@ -5,15 +5,15 @@ function isEthereum() {
 }
 
 function getChainID() {
-  if (isEthereum())  return parseInt(window.ethereum.chainId, 16);
-  
+  if (isEthereum()) return parseInt(window.ethereum.chainId, 16);
+
   return 0;
 }
 
 async function handleConnection(accounts) {
   if (accounts.length === 0) {
     const fetchedAccounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    
+
     return fetchedAccounts;
   }
 
@@ -90,7 +90,7 @@ export const GetParams = async () => {
 
     return response;
   }
-  
+
   response.balance = currentBalance;
 
   if (currentBalance < 0.2) {

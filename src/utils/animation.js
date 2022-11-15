@@ -103,7 +103,9 @@ export function sparcle(event) {
   const explosions = [];
 
   explosions.push(
-    exolpodeGroup(event.pageX, event.pageY, { scale: 1, x: -50, y: -50, r: 0 }),
+    exolpodeGroup(event.pageX, event.pageY, {
+      scale: 1, x: -50, y: -50, r: 0,
+    }),
   );
   explosions.push(
     exolpodeGroup(event.pageX, event.pageY, {
