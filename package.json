@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
+    "esbuild-windows-64": "^0.15.14",
     "eslint": "^8.27.0",
     "ethers": "^5.7.1",
     "react": "^18.2.0",
@@ -16,11 +18,13 @@
     "react-icons": "^4.6.0",
     "react-modal": "^3.15.1",
     "react-parallax-tilt": "^1.7.67",
+    "react-pro-sidebar": "^0.7.1",
     "react-router-dom": "^6.3.0",
     "react-tooltip": "^4.2.21",
     "web3modal": "^1.9.9",
-    "react-pro-sidebar": "^0.7.1"
-
+    "redux-logger": "^3.0.6",
+    "redux": "^4.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
