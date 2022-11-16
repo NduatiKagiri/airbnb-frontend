@@ -1,26 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Montserrat, sans-serif',
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+    },
     extend: {
-      colors: {
-        siteblack: '#131519',
-        siteDimBlack: '#191d23',
-        siteViolet: '#7f46f0',
-        siteWhite: '#9eacc7',
-      },
-      backgroundImage: {
-        astral: "url('/src/assets/background/astral.jpg')",
-        saiman: "url('/src/assets/background/saiman.jpg')",
-        eoaalien: "url('/src/assets/background/eoaalien.jpg')",
-        panight: "url('/src/assets/background/panight.jpg')",
-        heroImg: "url('/src/assets/background/hero-img.jpg')",
-        landing: "url('/src/assets/background/landing.jpg')",
-      },
-      fontFamily: {
-        rajdhani: ['Rajdhani', 'sans-serif'],
+      gridTemplateColumns: {
+        responsive: 'repeat(auto-fit,minmax(280px,1fr))',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line
+    require('flowbite/plugin'),
+  ],
 };
