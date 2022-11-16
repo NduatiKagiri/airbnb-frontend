@@ -1,3 +1,4 @@
+/* eslint-disable */
 // backgrounds
 import saiman from './background/saiman.jpg';
 import astral from './background/astral.jpg';
@@ -94,7 +95,6 @@ export {
   eoaalien,
   panight,
   heroImg,
-
   ace,
   bakezori,
   blackSolus,
@@ -125,17 +125,13 @@ export {
   whiplash,
   widowmaker,
   xho,
-
   logo,
-
   attack,
   defense,
   alertIcon,
   AlertIcon,
-
   player01,
   player02,
-
   attackSound,
   defenseSound,
   explosion,

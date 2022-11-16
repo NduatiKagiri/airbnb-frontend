@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { explosion } from '../assets';
 
 // https://codepen.io/meodai/pen/OVVzBb\
@@ -24,19 +25,10 @@ function transform($e, xValue, yValue, scaleValue, rotationValue, percent) {
   const unit = percent ? '%' : 'px';
   const rotation = rotationValue || 0;
 
-  const transfromString = `translate(${
-    x
-  }${unit
-  }, ${
-    y
-  }${unit
-  }) `
-    + `scale(${
-      scale
-    }) `
-    + `rotate(${
-      rotation
-    }deg)`;
+  const transfromString =
+    `translate(${x}${unit}, ${y}${unit}) ` +
+    `scale(${scale}) ` +
+    `rotate(${rotation}deg)`;
 
   $e.style.webkitTransform = transfromString;
   $e.style.MozTransform = transfromString;
@@ -103,7 +95,12 @@ export function sparcle(event) {
   const explosions = [];
 
   explosions.push(
-    exolpodeGroup(event.pageX, event.pageY, { scale: 1, x: -50, y: -50, r: 0 }),
+    exolpodeGroup(event.pageX, event.pageY, {
+      scale: 1,
+      x: -50,
+      y: -50,
+      r: 0,
+    })
   );
   explosions.push(
     exolpodeGroup(event.pageX, event.pageY, {
@@ -111,7 +108,7 @@ export function sparcle(event) {
       x: -30,
       y: -50,
       r: 180,
-    }),
+    })
   );
   explosions.push(
     exolpodeGroup(event.pageX, event.pageY, {
@@ -119,7 +116,7 @@ export function sparcle(event) {
       x: -50,
       y: -20,
       r: -90,
-    }),
+    })
   );
 
   requestAnimationFrame(() => {
