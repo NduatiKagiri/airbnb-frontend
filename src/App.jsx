@@ -7,15 +7,15 @@ import SideBarItem from './components/global/SideBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <SideBarItem/>
-      <BrowserRouter>
+ <main  className='content'>
         <Routes>
           <Route element={<LoginScreen />} path="/login" />
           <Route element={<SignupScreen />} path="/signup" />
           <Route path="/" element={<Home />} />
         </Routes>
-      </BrowserRouter>
+        </main>
     </div>
   );
 };
