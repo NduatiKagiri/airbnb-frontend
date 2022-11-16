@@ -6,6 +6,7 @@ import Home from './page/Home';
 import LoginScreen from './routes/Login';
 import SignupScreen from './routes/Signup';
 import './index.css';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -15,4 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path="/" element={<Home />} />
     </Routes>
   </BrowserRouter>,
+  <App />,
 );
