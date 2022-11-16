@@ -1,26 +1,49 @@
-/*  eslint linebreak-style: ["error", "unix"]  */
+import React from 'react';
 
-function LoginScreen() {
+const LoginScreen = () => {
+  const [auth, setAuth] = useState([]);
+
+  const signin = async (e) => {
+    e.preventDefault();
+    const postBody = {
+      username: e.target.username.value,
+    };
+    const login = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postBody),
+    };
+    const response = await fetch(`http://127.0.0.1:3000/auth/login`, login);
+    const data = await response.json()
+    const resp = [...auth];
+    resp = data
+    setAuth(resp)
+  };
+
   return (
-    <div className="container page-login">
-      <form action="#" className="login-form" method="POST">
+    <>
+      <div className="container page-login">
         <h2>LOGIN</h2>
-
-        <div className="add-padding-below">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="form-field"
-            placeholder="Name"
-            required
-          />
-        </div>
-        <p className="signin-message">
-          Don&apos;t have an account yet?
-        </p>
-      </form>
-    </div>
+        <form onSubmit={signin} className="login-form" method="POST">
+          <div className="add-padding-below">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="form-field"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <p className="signin-message">
+            Don&apos;t have an account yet?
+          </p>
+        </form>
+      </div>
+    </>
   );
-}
+};
+
 export default LoginScreen;
