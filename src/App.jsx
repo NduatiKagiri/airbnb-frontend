@@ -1,23 +1,30 @@
-import React from 'react'
-import Home from './page/Home';
-import LoginScreen from './routes/Login';
-import SignupScreen from './routes/Signup';
-import { Route, Routes } from 'react-router-dom';
-import SideBarItem from './components/global/SideBar';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+// import MenuOpener from './components/NavBar/MenuOpener';
+// import Navbar from './components/NavBar/Navbar';
+import Routernavigation from './navigation/Routernavigation';
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div className="app">
-      <SideBarItem/>
- <main  className='content'>
-        <Routes>
-          <Route element={<LoginScreen />} path="/login" />
-          <Route element={<SignupScreen />} path="/signup" />
-          <Route path="/" element={<Home />} />
-        </Routes>
-        </main>
+    <div>
+      {(location.pathname !== '/' && location.pathname !== '/sign_up')
+        && (
+        <>
+          {/* <MenuOpener open={open} toggleMenu={toggleMenu} /> */}
+          {/* <Navbar open={open} /> */}
+          <p> hello </p>
+        </>
+        )}
+      <Routernavigation />
     </div>
   );
-};
+}
 
-export default App
+export default App;
