@@ -22,3 +22,14 @@ const defaultImage = 'https://images.pexels.com/photos/323780/pexels-photo-32378
     if (houses.length) setIsHouse(true);
   }, [houses]);
 
+return (
+    <div className="container page-reservation">
+      <div className="info-container">
+        <h2> Your reservations</h2>
+        <p>
+          Know all future and past reservations made by you, as well as the selected vehicle
+          and the date range you choose.
+        </p>
+         {(reservations.length === 0) && (
+          <p className="no-reservations-message">No reservations has been made yet</p>
+        )}
