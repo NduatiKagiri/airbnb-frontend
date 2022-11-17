@@ -23,4 +23,3 @@ Logo.defaultProps = {
 };
 
 export default Logo;
-
