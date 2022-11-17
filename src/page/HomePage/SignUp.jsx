@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { IKContext, IKUpload } from 'imagekitio-react';
+// import { IKContext, IKUpload } from 'imagekitio-react';
 import { Progress } from 'flowbite-react';
 import DatePicker from '@hassanmojab/react-modern-calendar-datepicker';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
@@ -44,10 +44,10 @@ export default function SignUp() {
       user: {
         name: data.name,
         email: data.email,
-        date_of_birth: `${`${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`}`,
         password: data.password,
-        password_confirmation: data.password_confirmation,
-        photo: data.photo,
+        // date_of_birth: `${`${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`}`,
+        // password_confirmation: data.password_confirmation,
+        // photo: data.photo,
       },
     };
     dispatch(signUpUser(userInfo));
@@ -105,7 +105,8 @@ export default function SignUp() {
               Name
             </label>
           </div>
-          <div className="field group">
+
+          {/* <div className="field group">
             <input
               type="text"
               name="photo"
@@ -136,7 +137,8 @@ export default function SignUp() {
               <div>{imageMessage}</div>
               {progress ? <Progress progress={progress} color="indigo" /> : ' '}
             </IKContext>
-          </div>
+          </div> */}
+
           <div className="field group">
             <input
               type="email"
@@ -169,7 +171,8 @@ export default function SignUp() {
               Password
             </label>
           </div>
-          <div className="field group">
+
+          {/* <div className="field group">
             <input
               type="password"
               name="password_confirmation"
@@ -184,8 +187,9 @@ export default function SignUp() {
             >
               Password Confirmation
             </label>
-          </div>
-          <div className="field flex flex-col items-center mt-9 group">
+          </div> */}
+
+          {/* <div className="field flex flex-col items-center mt-9 group">
             <label
               htmlFor="date_of_birth"
               className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
@@ -200,7 +204,7 @@ export default function SignUp() {
               inputPlaceholder="Select a day"
               shouldHighlightWeekends
             />
-          </div>
+          </div> */}
 
           <button
             type="submit"
