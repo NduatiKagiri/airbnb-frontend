@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import tokenLogger from './actions/User/tokenLogger';
+import tokenLogger from './services/User/tokenLogger.jsx';
 import userSlice from './reducers/UserSlice';
 
 const rootReducer = combineReducers({

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import SignUp from '../pages/Home/SignUp';
-import Splash from '../pages/Home/Splash';
+import SignUp from '../page/HomePage/SignUp'
+import Splash from '../page/Home/Splash';
 import PrivateRoutes from './PrivateRoutes';
 
 export default function RouterConfig() {
