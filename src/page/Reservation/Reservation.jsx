@@ -33,3 +33,20 @@ return (
          {(reservations.length === 0) && (
           <p className="no-reservations-message">No reservations has been made yet</p>
         )}
+
+          {
+          isHouse && reservations.map((item) => (
+            <article key={item.id}>
+              <div className="main-info">
+
+                <Link to={`/models/${item.house_id}`}>
+                  <div className="reservation-photo">
+                    <img
+                      src={getHouse(item.house_id).galleries.length
+                        ? getHouse(item.house_id).galleries[0].photo
+                        : defaultImage}
+                      alt="house"
+                    />
+                  </div>
+                </Link>
+                
