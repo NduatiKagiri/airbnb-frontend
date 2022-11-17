@@ -1,15 +1,18 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { combineReducers } from 'redux';
-// import logger from 'redux-logger';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import tokenLogger from './actions/User/tokenLogger';
+import userSlice from './reducers/UserSlice';
 
-// const rootReducer = combineReducers({
-// });
+const rootReducer = combineReducers({
+  user: userSlice,
 
-// const store = configureStore({
-//   reducer: rootReducer,
-//   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-//     serializableCheck: false,
-//   }).concat(logger),
-// });
 
-// export default store;
+});
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
+store.dispatch(tokenLogger());
+
+export default store;
