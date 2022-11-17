@@ -13,6 +13,7 @@ function Splash() {
         <div className="add-form">
           Or create a new account
           <Link to="/sign_up" element={<SignUp />} className="submit-button bg-yellow-400">Sign Up</Link>
+
         </div>
       </div>
     </div>
