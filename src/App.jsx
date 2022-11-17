@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      { (location.pathname !== '/' && location.pathname !== '/sign_up')
+      {(location.pathname !== '/' && location.pathname !== '/sign_up')
         && (
         <>
           {/* <MenuOpener open={open} toggleMenu={toggleMenu} /> */}
