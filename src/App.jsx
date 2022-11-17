@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 // import MenuOpener from './components/NavBar/MenuOpener';
 // import Navbar from './components/NavBar/Navbar';
+import SideBar from './components/SideBar/SideBar'
 import Routernavigation from './navigation/Routernavigation';
 
 function App() {
@@ -18,8 +19,7 @@ function App() {
         && (
         <>
           {/* <MenuOpener open={open} toggleMenu={toggleMenu} /> */}
-          {/* <Navbar open={open} /> */}
-          <p> hello </p>
+           <SideBar open={open} />
         </>
         )}
       <Routernavigation />
