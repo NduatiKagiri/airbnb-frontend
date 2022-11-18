@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Navigate, useLocation,
 } from 'react-router-dom';
-import notFound from './404Page';
+import Forbidden from './Forbidden';
 
 export default function PrivateRoutes({ children, requiresAdmin }) {
   const location = useLocation();
@@ -16,13 +16,26 @@ export default function PrivateRoutes({ children, requiresAdmin }) {
     return <div>Checking Authentication</div>;
   }
 
+
+
+
+
   if (!isAuthenticated || (status === 'success' && !user.id)) {
     return <Navigate to="/" state={{ from: location }} />;
   }
 
   if (isAuthenticated && !isAdmin && requiresAdmin) {
-    return <notFound />;
+    return <Forbidden />;
   }
 
   return children;
 }
+
+PrivateRoutes.propTypes = {
+  children: PropTypes.element.isRequired,
+  requiresAdmin: PropTypes.bool,
+};
+
+PrivateRoutes.defaultProps = {
+  requiresAdmin: false,
+};
