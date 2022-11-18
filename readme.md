@@ -16,6 +16,8 @@ npm i
 //
 
 ```
+      // {(location.pathname !== '/' && location.pathname !== '/sign_up') && (     )}
+
 
 ## Installation
 
@@ -34,3 +36,43 @@ npm run dev
 ```sh
 npm run  build
 ```
+        <Route
+          path="/cars/reservation/:id"
+          element={(
+            <PrivateRoutes>
+              <Reservation />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/reserve"
+          element={(
+            <PrivateRoutes>
+              <Reserve />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/my_reservations"
+          element={(
+            <PrivateRoutes>
+              <MyReservations />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/my_reservations/reservation/:id"
+          element={(
+            <PrivateRoutes>
+              <Reservation />
+            </PrivateRoutes>
+          )}
+        />
+
+     ``` {user && user.id && (
+        <div className="flex justify-center items-center flex-col">
+          <img alt={user.name} src={user.photo} className="p-1 w-20 h-20 object-cover rounded-full ring-2 ring-gray-300" />
+          <h2 className="pt-3">{user.name}</h2>
+          <h2 className="text-sm">{user.email}</h2>
+        </div>
+      )}```
