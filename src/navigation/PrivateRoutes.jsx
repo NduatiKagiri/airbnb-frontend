@@ -26,5 +26,3 @@ export default function PrivateRoutes({ children, requiresAdmin }) {
 
   return children;
 }
-
-
