@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import InputColor from 'react-input-color';
 import { IKContext, IKUpload } from 'imagekitio-react';
 import { Progress } from 'flowbite-react';
-import createCars from '../../redux/actions/House/createHouse';
+import createCars from '../../redux/actions/Car/createCars';
 import {
   BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
 } from '../../navigation/routes';

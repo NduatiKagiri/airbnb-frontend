@@ -16,10 +16,6 @@ export default function PrivateRoutes({ children, requiresAdmin }) {
     return <div>Checking Authentication</div>;
   }
 
-
-
-
-
   if (!isAuthenticated || (status === 'success' && !user.id)) {
     return <Navigate to="/" state={{ from: location }} />;
   }

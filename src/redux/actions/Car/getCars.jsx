@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BASE_URL, HOUSE } from '../../../navigation/routes';
+import { BASE_URL, CARS } from '../../../navigation/routes';
 
-const getHouse = createAsyncThunk('cars/GET', async () => {
+const getCars = createAsyncThunk('cars/GET', async () => {
   const token = localStorage.getItem('token');
   if (token) {
-    const response = await fetch(`${BASE_URL + HOUSE}`, {
+    const response = await fetch(`${BASE_URL + CARS}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -12,11 +12,10 @@ const getHouse = createAsyncThunk('cars/GET', async () => {
         Authorization: token,
       },
     });
-    const house = await response.json();
-    console.log(house)
-    return house;
+    const cars = await response.json();
+    return cars;
   }
   return [];
 });
 
-export default getHouse;
+export default getCars;

@@ -3,11 +3,11 @@ import Reservation from '../pages/Reserve/Reservation';
 import SignUp from '../pages/Home/SignUp';
 import Splash from '../pages/Home/Splash';
 import PrivateRoutes from './PrivateRoutes';
-import AddHouseForm from '../pages/AddHouse/AddHouseForm';
-import House from '../pages/ListOfHouse/House';
-import DeleteHouse from '../pages/DeleteHouse/DeleteCar';
-// import MyReservations from '../pages/MyReservations/MyReservations';
-// import Reserve from '../pages/Reserve/Reserve';
+import AddCarForm from '../pages/AddCar/AddCarForm';
+import Cars from '../pages/ListOfCars/Cars';
+import DeleteCar from '../pages/DeleteCar/DeleteCar';
+import MyReservations from '../pages/MyReservations/MyReservations';
+import Reserve from '../pages/Reserve/Reserve';
 
 export default function RouterConfig() {
   return (
@@ -19,7 +19,7 @@ export default function RouterConfig() {
           path="/add_car"
           element={(
             <PrivateRoutes requiresAdmin>
-              <AddHouseForm />
+              <AddCarForm />
             </PrivateRoutes>
           )}
         />
@@ -27,7 +27,7 @@ export default function RouterConfig() {
           path="/delete_car"
           element={(
             <PrivateRoutes requiresAdmin>
-              <DeleteHouse />
+              <DeleteCar />
             </PrivateRoutes>
           )}
         />
@@ -35,11 +35,42 @@ export default function RouterConfig() {
           path="/cars"
           element={(
             <PrivateRoutes>
-              <House />
+              <Cars />
             </PrivateRoutes>
           )}
         />
-
+        <Route
+          path="/cars/reservation/:id"
+          element={(
+            <PrivateRoutes>
+              <Reservation />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/reserve"
+          element={(
+            <PrivateRoutes>
+              <Reserve />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/my_reservations"
+          element={(
+            <PrivateRoutes>
+              <MyReservations />
+            </PrivateRoutes>
+          )}
+        />
+        <Route
+          path="/my_reservations/reservation/:id"
+          element={(
+            <PrivateRoutes>
+              <Reservation />
+            </PrivateRoutes>
+          )}
+        />
       </Routes>
     </div>
   );

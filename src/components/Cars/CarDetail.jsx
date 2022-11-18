@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 import SettingsIcon from '@mui/icons-material/Settings';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
-import ReserveHouse from './ReserveHouse';
+import ReserveCar from './ReserveCar';
 
-function HouseDetail({
+function CarDetail({
   id,
   name,
-  houseType,
+  carType,
   carBrand,
-  housePrice,
+  carPrice,
+  carColor,
   toggleReservation,
   ReserveOpener,
 }) {
@@ -24,9 +25,10 @@ function HouseDetail({
       <h1 className=" self-end text-2xl">{name}</h1>
       <p className="self-end pb-8">{carType}</p>
       <div className=" py-2 px-2 bg-slate-400 mb-3 flex justify-between">
+        <p className=" ">{carBrand}</p>
         <p className=" ">
           $
-          {housePrice}
+          {carPrice}
         </p>
       </div>
       <div className="self-end flex gap-4">
@@ -36,16 +38,15 @@ function HouseDetail({
       <div className="btn-primary mt-8 flex items-center justify-center md:self-start">
         <SettingsIcon />
         <button type="button" className=" px-4" onClick={handleClick}>
-          Reserve house
+          Reserve Car
         </button>
         <ChevronRightOutlinedIcon />
       </div>
-
-      <ReserveHouse
+      <ReserveCar
         id={id}
         name={name}
-        houseType={houseType}
-        housePrice={housePrice}
+        carType={carType}
+        carPrice={carPrice}
         ReserveOpener={ReserveOpener}
         handleClick={handleClick}
       />
@@ -53,9 +54,9 @@ function HouseDetail({
   );
 }
 
-export default HouseDetail;
+export default CarDetail;
 
-HouseDetail.propTypes = {
+CarDetail.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   carType: PropTypes.string.isRequired,

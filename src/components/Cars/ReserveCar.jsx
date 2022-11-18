@@ -10,13 +10,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
 
-function ReserveHouse(props) {
+function ReserveCar(props) {
   const current = new Date();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {
-    id, name, HouseType, HousePrice, ReserveOpener, handleClick,
+    id, name, carType, carPrice, ReserveOpener, handleClick,
   } = props;
 
   const defaultFrom = {
@@ -35,7 +35,7 @@ function ReserveHouse(props) {
     to: defaultTo,
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
-  const [Total, setTotal] = useState(HousePrice);
+  const [Total, setTotal] = useState(carPrice);
 
   useEffect(() => {
     const date1 = new Date(
@@ -55,9 +55,9 @@ function ReserveHouse(props) {
 
     // To calculate the no. of days between two dates
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    const value = (differenceInDays + 1) * HousePrice;
+    const value = (differenceInDays + 1) * carPrice;
     setTotal(value);
-  }, [selectedDayRange, Total, HousePrice]);
+  }, [selectedDayRange, Total, carPrice]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ function ReserveHouse(props) {
     const reservationInfo = {
       reservation_date: reservationDate,
       due_date: dueDate,
-      house_id: id,
+      car_id: id,
     };
     dispatch(addReservations(reservationInfo));
     navigate('/my_reservations');
@@ -91,15 +91,15 @@ function ReserveHouse(props) {
           <CloseIcon />
         </button>
         <h1 className=" text-lg font-bold">
-          Reserving House &quot;
+          Reserving Car &quot;
           {name}
           &quot;
         </h1>
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
-          <p className=" ">{HouseType}</p>
+          <p className=" ">{carType}</p>
           <p className=" ">
             $
-            {HousePrice}
+            {carPrice}
             /Day
           </p>
         </div>
@@ -126,9 +126,9 @@ function ReserveHouse(props) {
   );
 }
 
-export default ReserveHouse;
+export default ReserveCar;
 
-ReserveHouse.propTypes = {
+ReserveCar.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   carType: PropTypes.string.isRequired,

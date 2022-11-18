@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import deleteCars from '../../redux/actions/House/deleteHouse';
+import deleteCars from '../../redux/actions/Car/deleteCars';
 
-function HouseCard(props) {
+function CarCard(props) {
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -12,7 +12,9 @@ function HouseCard(props) {
     id,
     img,
     name,
-    housePrice,
+    carType,
+    carBrand,
+    carPrice,
     reservationDate,
     reservation,
     deleteCar,
@@ -38,7 +40,7 @@ function HouseCard(props) {
             {name}
             {' '}
             (
-            {housePrice}
+            {carBrand}
             )
           </h1>
           {!deleteCar && <p className=" text-sm">{carType}</p>}
@@ -50,7 +52,7 @@ function HouseCard(props) {
           {!reservation && !deleteCar && (
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
               $
-              {housePrice}
+              {carPrice}
               /day
             </p>
           )}
@@ -69,9 +71,9 @@ function HouseCard(props) {
   );
 }
 
-export default HouseCard;
+export default CarCard;
 
-HouseCard.propTypes = {
+CarCard.propTypes = {
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -83,7 +85,7 @@ HouseCard.propTypes = {
   deleteCar: PropTypes.bool,
 };
 
-HouseCard.defaultProps = {
+CarCard.defaultProps = {
   reservationDate: String(Date.now()),
   reservation: false,
   deleteCar: false,

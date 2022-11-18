@@ -3,12 +3,14 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import HouseCard from '../../components/House/HouseCard';
-import getHouse from '../../redux/actions/House/getHouse';
+import CarCard from '../../components/Cars/CarCard';
+import getCars from '../../redux/actions/Car/getCars';
+import getReservations from '../../redux/actions/Reservation/getReservation';
 
-function House() {
+export default function DeleteCar() {
   const dispatch = useDispatch();
-  const { houses } = useSelector((state) => state.house);
+  const { cars } = useSelector((state) => state.cars);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -30,38 +32,40 @@ function House() {
   };
 
   useEffect(() => {
-    dispatch(getHouse());
+    dispatch(getCars());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getReservations());
+  }, [dispatch, cars]);
 
   return (
     <div className="pb-8 px-4 md:px-16">
       <div className="flex flex-col items-center justify-center py-8 md:py-16 md:pb-32">
         <h1 className=" text-4xl font-bold text-center">
-          Latest Model Houses Available.
+          List of cars created
         </h1>
         <p className=" text-xs text-slate-400">
-          Please select your car for reservation.
+          Please select the car to delete
         </p>
       </div>
-      {houses.length > 0
-        ? (
-          <Carousel responsive={responsive} showDots>
-            {houses.map((house) => (
-              <div key={house.id}>
-                <HouseCard
-                  key={house.id}
-                  id={house.id}
-                  img={house.image}
-                  name={house.name}
-                  housePrice={house.price}
-                />
-              </div>
-            ))}
-          </Carousel>
-        )
-        : <Loading message="Loading Cars" /> }
+      <Carousel responsive={responsive} showDots>
+        {cars.length > 0 ? (cars.map((car) => (
+          <div key={car.id}>
+            <CarCard
+              key={car.id}
+              id={car.id}
+              img={car.image}
+              name={car.name}
+              carType={car.car_type}
+              carBrand={car.brand}
+              carPrice={car.fee_per_day}
+              carColor={car.color}
+              deleteCar
+            />
+          </div>
+        ))) : <Loading message="Loading Cars" /> }
+      </Carousel>
     </div>
   );
 }
-
-export default House;

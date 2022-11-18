@@ -1,5 +1,5 @@
 {
-  "name": "airbnbclone",
+  "name": "ezcar_frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,6 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-input-color": "^4.0.1",
-    "react-pro-sidebar": "^0.7.1",
     "react-modern-calendar-datepicker": "^3.1.6",
     "react-multi-carousel": "^2.8.2",
     "react-redux": "^8.0.4",

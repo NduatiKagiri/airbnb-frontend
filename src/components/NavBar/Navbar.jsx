@@ -12,10 +12,16 @@ const Navbar = (props) => {
   return (
     <nav className={open ? '' : '-translate-x-48'}>
       <Logo />
-
+      {user && user.id && (
+        <div className="flex justify-center items-center flex-col">
+          <img alt={user.name} src={user.photo} className="p-1 w-20 h-20 object-cover rounded-full ring-2 ring-gray-300" />
+          <h2 className="pt-3">{user.name}</h2>
+          <h2 className="text-sm">{user.email}</h2>
+        </div>
+      )}
       <ul>
         <li>
-          <NavLink to="cars">House</NavLink>
+          <NavLink to="cars">Cars</NavLink>
         </li>
         <li>
           <NavLink to="reserve">Reserve</NavLink>
