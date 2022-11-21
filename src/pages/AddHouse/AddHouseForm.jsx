@@ -7,7 +7,7 @@ import { IKContext, IKUpload } from 'imagekitio-react';
 import { Progress } from 'flowbite-react';
 import createCars from '../../redux/actions/House/createHouse';
 import {
-  BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
+  BASE_URL
 } from '../../navigation/routes';
 
 function AddCarForm() {

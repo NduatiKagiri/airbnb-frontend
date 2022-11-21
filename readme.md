@@ -76,3 +76,22 @@ npm run  build
           <h2 className="text-sm">{user.email}</h2>
         </div>
       )}```
+
+```
+  <Route
+    path="/add_car"
+    element={(
+      <PrivateRoutes requiresAdmin>
+        <AddHouseForm />
+      </PrivateRoutes>
+    )}
+  />
+  <Route
+    path="/delete_car"
+    element={(
+      <PrivateRoutes requiresAdmin>
+        <DeleteHouse />
+      </PrivateRoutes>
+    )}
+  />
+```

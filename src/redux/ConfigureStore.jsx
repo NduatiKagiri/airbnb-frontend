@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import tokenLogger from './services/User/tokenLogger';
+import tokenLogger from './actions/User/tokenLogger';
 import userSlice from './reducers/UserSlice';
 import houseSlice from './reducers/HouseSlice';
 // import ReservationSlice from './reducers/ReservationSlice';

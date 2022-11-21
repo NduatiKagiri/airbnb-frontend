@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 // import { Progress } from 'flowbite-react';
-import signUpUser from '../../redux/services/User/signUpUser';
+import signUpUser from '../../redux/actions/User/signUpUser';
 
 export default function SignUp() {
   const navigate = useNavigate();

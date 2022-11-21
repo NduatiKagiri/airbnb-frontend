@@ -16,23 +16,7 @@ export default function RouterConfig() {
         <Route path="/" element={<Splash />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route
-          path="/add_car"
-          element={(
-            <PrivateRoutes requiresAdmin>
-              <AddHouseForm />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/delete_car"
-          element={(
-            <PrivateRoutes requiresAdmin>
-              <DeleteHouse />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/cars"
+          path="/houses"
           element={(
             <PrivateRoutes>
               <House />

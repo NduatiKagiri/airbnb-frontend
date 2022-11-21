@@ -29,9 +29,9 @@ function House() {
     },
   };
 
-  useEffect(() => {
-    dispatch(getHouse());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getHouse());
+  // }, [dispatch]);
 
   return (
     <div className="pb-8 px-4 md:px-16">
