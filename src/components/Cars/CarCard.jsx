@@ -13,13 +13,13 @@ function CarCard(props) {
     img,
     name,
     carType,
-    carBrand,
+    carLocation,
     carPrice,
     reservationDate,
     reservation,
     deleteCar,
   } = props;
-  const reservationLink = `/cars/reservation/${id}`;
+  const reservationLink = `/${id}/details`;
 
   const handleDelete = (e, id) => {
     e.preventDefault();
@@ -38,12 +38,8 @@ function CarCard(props) {
         <div className="p-5">
           <h1 className=" text-xl">
             {name}
-            {' '}
-            (
-            {carBrand}
-            )
           </h1>
-          {!deleteCar && <p className=" text-sm">{carType}</p>}
+          {!deleteCar && <p className=" text-sm">{carLocation}</p>}
           {reservation && (
             <div className="bg-lime-400 self-end p-2 rounded-full">
               <p>{reservationDate}</p>
@@ -53,7 +49,7 @@ function CarCard(props) {
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
               $
               {carPrice}
-              /day
+              /night
             </p>
           )}
           {deleteCar && (
@@ -77,8 +73,7 @@ CarCard.propTypes = {
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  carType: PropTypes.string.isRequired,
-  carBrand: PropTypes.string.isRequired,
+  carLocation: PropTypes.string.isRequired,
   carPrice: PropTypes.number.isRequired,
   reservationDate: PropTypes.string,
   reservation: PropTypes.bool,

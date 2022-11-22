@@ -31,17 +31,15 @@ function Reservation() {
       {car && car.id ? (
         <>
           <img
-            src={car.image}
+            src={car.photo}
             alt={car.name}
             className="rounded-3xl max-h-screen w-11/12 md:w-full object-cover"
           />
           <CarDetail
             id={Number(id)}
             name={car.name}
-            carType={car.car_type}
-            carBrand={car.brand}
-            carPrice={car.fee_per_day}
-            carColor={car.color}
+            carLocation={car.location}
+            carPrice={car.price}
             toggleReservation={toggleReservation}
             ReserveOpener={ReserveOpener}
           />

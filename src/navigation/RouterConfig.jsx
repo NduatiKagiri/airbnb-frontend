@@ -40,7 +40,7 @@ export default function RouterConfig() {
           )}
         />
         <Route
-          path="/cars/reservation/:id"
+          path="/:id/details"
           element={(
             <PrivateRoutes>
               <Reservation />

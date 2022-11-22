@@ -18,7 +18,7 @@ export default function LogIn() {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const userInfo = {
-      user: { email: data.email, password: data.password },
+      username: data.username
     };
     dispatch(logInUser(userInfo));
   };
@@ -44,34 +44,18 @@ export default function LogIn() {
       )}
       <div className="field group">
         <input
-          type="email"
-          name="email"
-          id="email"
+          type="text"
+          name="username"
+          id="username"
           className="text-field peer"
           placeholder=" "
           required
         />
         <label
-          htmlFor="email"
+          htmlFor="username"
           className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
         >
-          Email
-        </label>
-      </div>
-      <div className="field group">
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className="text-field peer"
-          placeholder=" "
-          required
-        />
-        <label
-          htmlFor="password"
-          className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
-        >
-          Password
+          Username
         </label>
       </div>
       <button

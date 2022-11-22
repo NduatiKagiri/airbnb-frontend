@@ -11,7 +11,7 @@ function Cars() {
   const { cars } = useSelector((state) => state.cars);
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+      // the naming can be any, depends on you
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -51,12 +51,10 @@ function Cars() {
                 <CarCard
                   key={car.id}
                   id={car.id}
-                  img={car.image}
+                  img={car.photo}
                   name={car.name}
-                  carType={car.car_type}
-                  carBrand={car.brand}
-                  carPrice={car.fee_per_day}
-                  carColor={car.color}
+                  carPrice={car.price}
+                  carLocation={car.location}
                 />
               </div>
             ))}

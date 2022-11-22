@@ -16,7 +16,7 @@ function ReserveCar(props) {
   const navigate = useNavigate();
 
   const {
-    id, name, carType, carPrice, ReserveOpener, handleClick,
+    id, name, carLocation, carPrice, ReserveOpener, handleClick,
   } = props;
 
   const defaultFrom = {
@@ -64,9 +64,9 @@ function ReserveCar(props) {
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
     const reservationInfo = {
-      reservation_date: reservationDate,
-      due_date: dueDate,
-      car_id: id,
+      date_in: reservationDate,
+      date_out: dueDate,
+      house_id: id,
     };
     dispatch(addReservations(reservationInfo));
     navigate('/my_reservations');
@@ -96,11 +96,11 @@ function ReserveCar(props) {
           &quot;
         </h1>
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
-          <p className=" ">{carType}</p>
+          <p className=" ">{carLocation}</p>
           <p className=" ">
             $
             {carPrice}
-            /Day
+            /Night
           </p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -117,7 +117,7 @@ function ReserveCar(props) {
               {Total}
             </p>
           </div>
-          <button type="submit" className=" self-end submit-button">
+          <button type="submit" className=" self-end submit-button" style={{float: "right"}}>
             Submit
           </button>
         </form>
@@ -131,7 +131,7 @@ export default ReserveCar;
 ReserveCar.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  carType: PropTypes.string.isRequired,
+  carLocation: PropTypes.string.isRequired,
   carPrice: PropTypes.number.isRequired,
   ReserveOpener: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
