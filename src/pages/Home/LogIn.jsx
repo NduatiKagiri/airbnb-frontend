@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logInUser from '../../redux/actions/User';
+import logInUser from '../../redux/actions/User/logInUser';
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -11,7 +11,6 @@ export default function LogIn() {
   const formRef = useRef();
   const user = useSelector((state) => state.user);
   const [errorMessage, setErrorMessage] = useState('');
-  const { state } = useLocation(); // Previous location
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,19 +22,19 @@ export default function LogIn() {
     dispatch(logInUser(userInfo));
   };
 
+  console.log(status
+)
   useEffect(() => {
-    if (user.status === 'success') {
-      try {
-        if (user.user.error) {
-          setErrorMessage(user.user.error);
-        } else {
-          navigate(state ? state.from : '/cars');
-        }
-      } catch (e) {
-        setErrorMessage(e.error);
-      }
+
+
+      if (user.status  === 'success') {
+        navigate( '/houses');
+      } else {
+        navigate('/');
+
     }
-  }, [navigate, user, state]);
+
+  }, [dispatch,navigate ]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
