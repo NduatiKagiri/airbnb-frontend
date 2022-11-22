@@ -16,9 +16,15 @@ export default function PrivateRoutes({ children, requiresAdmin }) {
     return <div>Checking Authentication</div>;
   }
 
+<<<<<<< Updated upstream
   if (!isAuthenticated || (status === 'success' && !user.id)) {
     return <Navigate to="/" state={{ from: location }} />;
   }
+=======
+  // if (!isAuthenticated || (status === 'success' && !user.id)) {
+  //   return <Navigate to="/" state={{ from: location }} />;
+  // }
+>>>>>>> Stashed changes
 
   if (isAuthenticated && !isAdmin && requiresAdmin) {
     return <notFound />;
