@@ -104,12 +104,6 @@ function ReserveCar(props) {
           </p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <Calendar
-            value={selectedDayRange}
-            onChange={setSelectedDayRange}
-            shouldHighlightWeekends
-            minimumDate={utils().getToday()}
-          />
           <div className=" py-2 px-2 bg-slate-400 flex justify-between">
             <p className=" ">Total Price:</p>
             <p className=" ">
@@ -117,9 +111,15 @@ function ReserveCar(props) {
               {Total}
             </p>
           </div>
-          <button type="submit" className=" self-end submit-button" style={{float: "right"}}>
+          <button type="submit" className=" self-end submit-button">
             Submit
           </button>
+          <Calendar
+            value={selectedDayRange}
+            onChange={setSelectedDayRange}
+            shouldHighlightWeekends
+            minimumDate={utils().getToday()}
+          />
         </form>
       </div>
     </div>

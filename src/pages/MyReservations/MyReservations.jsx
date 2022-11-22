@@ -6,7 +6,7 @@ import getReservations from '../../redux/actions/Reservation/getReservation';
 
 function MyReservations() {
   const dispatch = useDispatch();
-  const { reservation } = useSelector((state) => state.reservation);
+  const { reservation } = useSelector((state) => state.reservations);
   const { cars } = useSelector((state) => state.cars);
 
   useEffect(() => {
@@ -27,19 +27,17 @@ function MyReservations() {
       </div>
       <div className="grid grid-cols-responsive px gap-4 justify-items-center">
         {reservation.length > 0 && cars.length > 0 ? (reservation.map((res) => {
-          const reservedCar = car(res.car_id)[0];
+          const reservedCar = car(res.house_id)[0];
           return (
             <CarCard
               key={res.id}
               id={reservedCar.id}
-              img={reservedCar.image}
+              img={reservedCar.photo}
               name={reservedCar.name}
-              carType={reservedCar.car_type}
-              carBrand={reservedCar.brand}
-              carPrice={reservedCar.fee_per_day}
-              carColor={reservedCar.color}
+              carPrice={reservedCar.price}
+              carLocation={reservedCar.location}
               reservation
-              reservationDate={res.reservation_date}
+              reservationDate={res.date_out}
             />
           );
         })) : <div>No Reserved Cars</div> }

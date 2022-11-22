@@ -3,12 +3,12 @@ import logger from 'redux-logger';
 import tokenLogger from './actions/User/tokenLogger';
 import userSlice from './reducers/UserSlice';
 import carSlice from './reducers/CarSlice';
-import ReservationSlice from './reducers/ReservationSlice';
+import reservationSlice from './reducers/ReservationSlice';
 
 const rootReducer = combineReducers({
   user: userSlice,
   cars: carSlice,
-  reservation: ReservationSlice,
+  reservations: reservationSlice,
 });
 
 const store = configureStore({
