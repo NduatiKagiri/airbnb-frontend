@@ -20,21 +20,28 @@ export default function LogIn() {
       username: data.username,
     };
     dispatch(logInUser(userInfo));
-  };
+    console.log(user)
 
-  console.log(status
-)
-  useEffect(() => {
-
+    setTimeout(() => {
 
       if (user.status  === 'success') {
-        navigate( '/houses');
+        navigate('/houses');
       } else {
         navigate('/');
+      }
+    }, 1500);
+  };
 
-    }
+  // useEffect(() => {
 
-  }, [dispatch,navigate ]);
+
+  //       navigate( '/houses');
+  //     } else {
+  //       navigate('/');
+
+  //   }
+
+  // }, [dispatch,navigate ]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
