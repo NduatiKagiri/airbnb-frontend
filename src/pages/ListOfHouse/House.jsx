@@ -8,7 +8,7 @@ import getHouse from '../../redux/actions/House/getHouse';
 
 function House() {
   const dispatch = useDispatch();
-  const { houses } = useSelector((state) => state.houses);
+  const { houses } = useSelector((state) => state.house);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import InputColor from 'react-input-color';
 import { IKContext, IKUpload } from 'imagekitio-react';
 import { Progress } from 'flowbite-react';
-import createHouses from '../../redux/actions/House/createHouse';
-// import {
-//   BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
-// } from '../../navigation/routes';
+import createCars from '../../redux/actions/House/createHouse';
+import {
+  BASE_URL
+} from '../../navigation/routes';
 
 function AddCarForm() {
   const [color, setColor] = React.useState({});
@@ -51,23 +51,23 @@ function AddCarForm() {
     }
   }, [cars]);
 
-  // const onUploadStart = () => {
-  //   setImageMessage('Upload Started');
-  // };
-  //
-  // const onUploadProgress = (evt) => {
-  //   setImageMessage('Progress: ');
-  //   setProgress(((evt.loaded / evt.total) * 100).toFixed(0));
-  // };
-  //
-  // const onError = (err) => {
-  //   setImageMessage(`Error: ${err.message}`);
-  // };
-  //
-  // const onSuccess = (res) => {
-  //   setImageMessage('Success!');
-  //   document.getElementById('image').value = res.url;
-  // };
+  const onUploadStart = () => {
+    setImageMessage('Upload Started');
+  };
+
+  const onUploadProgress = (evt) => {
+    setImageMessage('Progress: ');
+    setProgress(((evt.loaded / evt.total) * 100).toFixed(0));
+  };
+
+  const onError = (err) => {
+    setImageMessage(`Error: ${err.message}`);
+  };
+
+  const onSuccess = (res) => {
+    setImageMessage('Success!');
+    document.getElementById('image').value = res.url;
+  };
 
   return (
     <div className="add-car-wrapper">

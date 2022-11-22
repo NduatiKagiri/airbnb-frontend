@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import logInUser from '../services/User/logInUser';
-import logOutUser from '../services/User/logOutUser';
-import signUpUser from '../services/User/signUpUser';
-import tokenLogger from '../services/User/tokenLogger';
+import logInUser from '../actions/User/logInUser';
+import logOutUser from '../actions/User/logOutUser';
+import signUpUser from '../actions/User/signUpUser';
+import tokenLogger from '../actions/User/tokenLogger';
 
 const initialState = {};
 

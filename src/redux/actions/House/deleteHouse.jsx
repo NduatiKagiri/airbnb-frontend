@@ -5,7 +5,7 @@ const deleteHouses = createAsyncThunk('house/DELETE', async (houseId) => {
   const token = localStorage.getItem('token');
   if (token) {
     try {
-      const response = await fetch(`${BASE_URL + CARS}/${houseId}`, {
+      const response = await fetch(`${BASE_URL + Houses}/${houseId}`, {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',

@@ -4,7 +4,7 @@ import { BASE_URL, HOUSES } from '../../../navigation/routes';
 const createCars = createAsyncThunk('cars/CREATE', async (carInfo) => {
   const token = localStorage.getItem('token');
   if (token) {
-    const response = await fetch(`${BASE_URL + CARS}`, {
+    const response = await fetch(`${BASE_URL + HOUSE}`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
