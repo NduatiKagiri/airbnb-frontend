@@ -30,7 +30,7 @@ export default function SignUp() {
         if (user.user.error) {
           setErrorMessage(user.user.error);
         } else {
-          navigate('/houses');
+          navigate('/');
         }
       } catch (e) {
         setErrorMessage(e.error);

@@ -12,8 +12,8 @@ const getHouses = createAsyncThunk('houses/GET', async () => {
         Authorization: token,
       },
     });
-    const cars = await response.json();
-    return cars;
+    const houses = await response.json();
+    return houses;
   }
   return [];
 });
