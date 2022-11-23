@@ -11,7 +11,6 @@ export default function SignUp() {
   const formRef = useRef();
   const user = useSelector((state) => state.user);
   const [errorMessage, setErrorMessage] = useState('');
-  const [selectedDay, setSelectedDay] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();

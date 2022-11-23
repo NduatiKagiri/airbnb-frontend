@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logInUser from '../../redux/actions/User/logInUser';
 
 export default function LogIn() {
@@ -10,7 +10,7 @@ export default function LogIn() {
   const dispatch = useDispatch();
   const formRef = useRef();
   const user = useSelector((state) => state.user);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
