@@ -8,7 +8,6 @@
 
 ## Website Mockup
 
-![image](https://user-images.githubusercontent.com/97900045/199352101-f54edc23-87d4-4bbe-bcbc-958740165301.png)
 
 ## Built With
 
