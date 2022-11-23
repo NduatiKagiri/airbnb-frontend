@@ -3,12 +3,12 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import CarCard from '../../components/Cars/CarCard';
-import getCars from '../../redux/actions/Car/getCars';
+import HouseCard from '../../components/Houses/HouseCard';
+import getHouses from '../../redux/actions/House/getHouses';
 
-function Cars() {
+function Houses() {
   const dispatch = useDispatch();
-  const { cars } = useSelector((state) => state.cars);
+  const { houses } = useSelector((state) => state.houses);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you
@@ -30,39 +30,39 @@ function Cars() {
   };
 
   useEffect(() => {
-    dispatch(getCars());
+    dispatch(getHouses());
   }, [dispatch]);
 
   return (
     <div className="pb-8 px-4 md:px-16">
       <div className="flex flex-col items-center justify-center py-8 md:py-16 md:pb-32">
         <h1 className=" text-4xl font-bold text-center">
-          Latest Model Cars Available.
+          Houses Available.
         </h1>
         <p className=" text-xs text-slate-400">
-          Please select your car for reservation.
+          Please select your house for reservation.
         </p>
       </div>
-      {cars.length > 0
+      {houses.length > 0
         ? (
           <Carousel responsive={responsive} showDots>
-            {cars.map((car) => (
+            {houses.map((house) => (
               <div key={car.id}>
-                <CarCard
-                  key={car.id}
-                  id={car.id}
-                  img={car.photo}
-                  name={car.name}
-                  carPrice={car.price}
-                  carLocation={car.location}
+                <HouseCard
+                  key={house.id}
+                  id={house.id}
+                  img={house.photo}
+                  name={house.name}
+                  housePrice={house.price}
+                  houseLocation={house.location}
                 />
               </div>
             ))}
           </Carousel>
         )
-        : <Loading message="Loading Cars" /> }
+        : <Loading message="Loading Houses" /> }
     </div>
   );
 }
 
-export default Cars;
+export default Houses;

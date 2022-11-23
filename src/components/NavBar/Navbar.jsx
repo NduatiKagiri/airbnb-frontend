@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Footer from '../Footer/Footer';
 import Logo from '../Logo/Logo';
-import LogOut from '../Buttons/LogOut';
 
 const Navbar = (props) => {
   const { open } = props;
@@ -21,10 +20,7 @@ const Navbar = (props) => {
       )}
       <ul>
         <li>
-          <NavLink to="cars">Cars</NavLink>
-        </li>
-        <li>
-          <NavLink to="reserve">Reserve</NavLink>
+          <NavLink to="houses">Houses</NavLink>
         </li>
         <li>
           <NavLink to="my_reservations">My Reservations</NavLink>
@@ -32,16 +28,13 @@ const Navbar = (props) => {
         {user && user.role === 'admin' && (
           <>
             <li>
-              <NavLink to="add_car">Add Car</NavLink>
+              <NavLink to="add_house">Add House</NavLink>
             </li>
             <li>
-              <NavLink to="delete_car">Delete Car</NavLink>
+              <NavLink to="delete_house">Delete House</NavLink>
             </li>
           </>
         )}
-        <li>
-          <LogOut />
-        </li>
       </ul>
       <Footer />
     </nav>

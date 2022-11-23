@@ -10,13 +10,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
 
-function ReserveCar(props) {
+function ReserveHouse(props) {
   const current = new Date();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {
-    id, name, carLocation, carPrice, ReserveOpener, handleClick,
+    id, name, houseLocation, housePrice, ReserveOpener, handleClick,
   } = props;
 
   const defaultFrom = {
@@ -55,9 +55,9 @@ function ReserveCar(props) {
 
     // To calculate the no. of days between two dates
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    const value = (differenceInDays + 1) * carPrice;
+    const value = (differenceInDays + 1) * housePrice;
     setTotal(value);
-  }, [selectedDayRange, Total, carPrice]);
+  }, [selectedDayRange, Total, housePrice]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -91,15 +91,15 @@ function ReserveCar(props) {
           <CloseIcon />
         </button>
         <h1 className=" text-lg font-bold">
-          Reserving Car &quot;
+          Reserving House &quot;
           {name}
           &quot;
         </h1>
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
-          <p className=" ">{carLocation}</p>
+          <p className=" ">{houseLocation}</p>
           <p className=" ">
             $
-            {carPrice}
+            {housePrice}
             /Night
           </p>
         </div>
@@ -126,13 +126,13 @@ function ReserveCar(props) {
   );
 }
 
-export default ReserveCar;
+export default ReserveHouse;
 
 ReserveCar.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  carLocation: PropTypes.string.isRequired,
-  carPrice: PropTypes.number.isRequired,
+  houseLocation: PropTypes.string.isRequired,
+  housePrice: PropTypes.number.isRequired,
   ReserveOpener: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

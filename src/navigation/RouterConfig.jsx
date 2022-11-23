@@ -3,11 +3,10 @@ import Reservation from '../pages/Reserve/Reservation';
 import SignUp from '../pages/Home/SignUp';
 import Splash from '../pages/Home/Splash';
 import PrivateRoutes from './PrivateRoutes';
-import AddCarForm from '../pages/AddCar/AddCarForm';
-import Cars from '../pages/ListOfCars/Cars';
-import DeleteCar from '../pages/DeleteCar/DeleteCar';
+import AddHouseForm from '../pages/AddHouse/AddHouseForm';
+import Houses from '../pages/ListOfHouses/Houses';
+import DeleteHouse from '../pages/DeleteHouse/DeleteHouse';
 import MyReservations from '../pages/MyReservations/MyReservations';
-import Reserve from '../pages/Reserve/Reserve';
 
 export default function RouterConfig() {
   return (
@@ -16,26 +15,26 @@ export default function RouterConfig() {
         <Route path="/" element={<Splash />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route
-          path="/add_car"
+          path="/add_house"
           element={(
             <PrivateRoutes requiresAdmin>
-              <AddCarForm />
+              <AddHouseForm />
             </PrivateRoutes>
           )}
         />
         <Route
-          path="/delete_car"
+          path="/delete_house"
           element={(
             <PrivateRoutes requiresAdmin>
-              <DeleteCar />
+              <DeleteHouse />
             </PrivateRoutes>
           )}
         />
         <Route
-          path="/cars"
+          path="/houses"
           element={(
             <PrivateRoutes>
-              <Cars />
+              <Houses />
             </PrivateRoutes>
           )}
         />
@@ -44,14 +43,6 @@ export default function RouterConfig() {
           element={(
             <PrivateRoutes>
               <Reservation />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/reserve"
-          element={(
-            <PrivateRoutes>
-              <Reserve />
             </PrivateRoutes>
           )}
         />
