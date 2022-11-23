@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCarAlt } from 'react-icons/fa';
+import { FaBuilding } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,8 +7,8 @@ const Logo = ({ extraClasses }) => (
   <div>
     <Link to="/">
       <div className={`logo-box font-['Secular_One'] ${extraClasses}`}>
-        <FaCarAlt />
-        <span>CarZone</span>
+        <FaBuilding />
+        <span>AIRbnb</span>
       </div>
     </Link>
   </div>
