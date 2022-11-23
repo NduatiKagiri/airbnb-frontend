@@ -11,7 +11,6 @@ export default function LogIn() {
   const formRef = useRef();
   const user = useSelector((state) => state.user);
   const [errorMessage, setErrorMessage] = useState('');
-  const { state } = useLocation(); // Previous location
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,21 +20,28 @@ export default function LogIn() {
       username: data.username
     };
     dispatch(logInUser(userInfo));
+    console.log(user)
+
+    setTimeout(() => {
+
+      if (user.status  === 'success') {
+        navigate('/houses');
+      } else {
+        navigate('/');
+      }
+    }, 1500);
   };
 
-  useEffect(() => {
-    if (user.status === 'success') {
-      try {
-        if (user.user.error) {
-          setErrorMessage(user.user.error);
-        } else {
-          navigate(state ? state.from : '/cars');
-        }
-      } catch (e) {
-        setErrorMessage(e.error);
-      }
-    }
-  }, [navigate, user, state]);
+  // useEffect(() => {
+
+
+  //       navigate( '/houses');
+  //     } else {
+  //       navigate('/');
+
+  //   }
+
+  // }, [dispatch,navigate ]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>

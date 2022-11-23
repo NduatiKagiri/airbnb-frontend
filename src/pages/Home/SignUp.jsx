@@ -3,11 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { Progress } from 'flowbite-react';
 import signUpUser from '../../redux/actions/User/signUpUser';
-import {
-  BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
-} from '../../navigation/routes';
 
 export default function SignUp() {
   const navigate = useNavigate();
