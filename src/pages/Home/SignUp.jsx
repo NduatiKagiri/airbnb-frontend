@@ -103,7 +103,7 @@ export default function SignUp() {
           >
             Submit
           </button>
-          <Link to="/" className="mt-3 underline">Back to Home</Link>
+          <Link to="/" className="mt-3 underline">Back to Login</Link>
         </form>
       </div>
     </div>
