@@ -1,5 +1,5 @@
 // const BASE_URL = 'https://ezcar-backend.herokuapp.com';
-const BASE_URL = 'http://127.0.0.1:3000';
+const BASE_URL = 'https://fast-wildwood-74017.herokuapp.com';
 const IMAGE_URL = 'https://ik.imagekit.io/ezcar';
 const LOG_IN = '/auth/login';
 const LOG_OUT = '/logout';
