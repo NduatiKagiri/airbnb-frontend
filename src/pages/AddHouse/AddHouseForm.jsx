@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import createHouses from '../../redux/actions/House/createHouses';
 
 function AddHouseForm() {
-  const [color, setColor] = React.useState({});
-  const [imageMessage, setImageMessage] = useState('');
-  const [progress, setProgress] = useState(0);
   const houses = useSelector((state) => state.houses);
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();

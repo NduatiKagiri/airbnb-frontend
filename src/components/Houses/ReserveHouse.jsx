@@ -35,7 +35,7 @@ function ReserveHouse(props) {
     to: defaultTo,
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
-  const [Total, setTotal] = useState(carPrice);
+  const [Total, setTotal] = useState(housePrice);
 
   useEffect(() => {
     const date1 = new Date(
@@ -128,7 +128,7 @@ function ReserveHouse(props) {
 
 export default ReserveHouse;
 
-ReserveCar.propTypes = {
+ReserveHouse.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   houseLocation: PropTypes.string.isRequired,

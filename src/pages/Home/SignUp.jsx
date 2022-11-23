@@ -12,8 +12,6 @@ export default function SignUp() {
   const user = useSelector((state) => state.user);
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedDay, setSelectedDay] = useState(null);
-  const [imageMessage, setImageMessage] = useState('');
-  const [progress, setProgress] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +20,7 @@ export default function SignUp() {
     const userInfo = {
       name: data.name,
       email: data.email,
-      username: data.username
+      username: data.username,
     };
     dispatch(signUpUser(userInfo));
   };
@@ -32,7 +30,7 @@ export default function SignUp() {
         if (user.user.error) {
           setErrorMessage(user.user.error);
         } else {
-          navigate('/cars');
+          navigate('/houses');
         }
       } catch (e) {
         setErrorMessage(e.error);
@@ -79,7 +77,7 @@ export default function SignUp() {
           </div>
           <div className="field group">
             <input
-              type="text"username
+              type="text"
               name="username"
               id="username"
               className="text-field peer"

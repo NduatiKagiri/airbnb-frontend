@@ -24,7 +24,7 @@ function RadioInput(props) {
       >
         <div className="block">
           <div className="w-full text-lg font-semibold">{name}</div>
-          <div className="w-full">{carType}</div>
+          <div className="w-full">{houseLocation}</div>
           <div className="w-full text-xs">
             $
             {housePrice}

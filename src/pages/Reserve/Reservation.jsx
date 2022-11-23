@@ -7,7 +7,7 @@ import getHouses from '../../redux/actions/House/getHouses';
 
 function Reservation() {
   const dispatch = useDispatch();
-  const { cars } = useSelector((state) => state.cars);
+  const { houses } = useSelector((state) => state.houses);
 
   const [ReserveOpener, setReserveOpener] = useState(true);
 

@@ -47,7 +47,7 @@ function Houses() {
         ? (
           <Carousel responsive={responsive} showDots>
             {houses.map((house) => (
-              <div key={car.id}>
+              <div key={house.id}>
                 <HouseCard
                   key={house.id}
                   id={house.id}

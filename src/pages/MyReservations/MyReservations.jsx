@@ -15,14 +15,14 @@ function MyReservations() {
   }, [dispatch, houses.houses]);
 
   const house = (id) => {
-    const filterdHouse = houses.filter((house) => hhouse.id === id);
-    return filterdCar;
+    const filterdHouse = houses.filter((house) => house.id === id);
+    return filterdHouse;
   };
 
   return (
     <div className="pb-4">
       <div className="flex flex-col items-center justify-center py-16 md:pb-32">
-        <h1 className=" text-4xl font-bold text-center">Reserved Cars.</h1>
+        <h1 className=" text-4xl font-bold text-center">Reserved Houses.</h1>
         <p className=" text-xs text-slate-400">Lists of all reservations.</p>
       </div>
       <div className="grid grid-cols-responsive px gap-4 justify-items-center">

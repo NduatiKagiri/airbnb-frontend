@@ -13,7 +13,6 @@ function HouseDetail({
   toggleReservation,
   ReserveOpener,
 }) {
-  const color = 'self-end p-4';
   const handleClick = () => {
     toggleReservation();
   };
@@ -49,7 +48,7 @@ function HouseDetail({
 
 export default HouseDetail;
 
-CarDetail.propTypes = {
+HouseDetail.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   houseLocation: PropTypes.string.isRequired,

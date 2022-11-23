@@ -17,14 +17,12 @@ export default function LogIn() {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const userInfo = {
-      username: data.username
+      username: data.username,
     };
     dispatch(logInUser(userInfo));
-    console.log(user)
 
     setTimeout(() => {
-
-      if (user.status  === 'success') {
+      if (user.status === 'success') {
         navigate('/houses');
       } else {
         navigate('/');
@@ -33,7 +31,6 @@ export default function LogIn() {
   };
 
   // useEffect(() => {
-
 
   //       navigate( '/houses');
   //     } else {
