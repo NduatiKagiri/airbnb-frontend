@@ -1,97 +1,57 @@
-# airbnb clone
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Inspired by [name]
+# House Frontend
 
-Note if you have access to [Tailwind UI](https://tailwindui.com), you can follow the following steps to add it:
+> This application allows users to book a house present in our database. The user can set the reservation date and final date for a selected house. If the user is an administrator they can upload a house and delete it from our database.
 
-1. Install `@tailwindcss/ui`:
+## Backend Repository
 
-```sh
-npm i
-```
+## Website Mockup
 
-2. Add the plugin in `tailwind.config.js` without changing anything else:
+![image](https://user-images.githubusercontent.com/97900045/199352101-f54edc23-87d4-4bbe-bcbc-958740165301.png)
 
-```js
-//
+## Built With
 
-```
-      // {(location.pathname !== '/' && location.pathname !== '/sign_up') && (     )}
+### Technologies
+- React
+- Redux
+- Tailwind CSS
+- MUI
+- Flowbite
+- ReactMultiCarousel
+
+### Tools
+- Visual Studio Code
+- GIT
+- Rubocop
+- Heroku
+
+## Live Demo
 
 
-## Installation
+## Getting Started
 
-```sh
-npm i
-```
+To get a local copy up and running follow these simple example steps.
 
-## Development
+### Prerequisites
+- npm
+- git
 
-```sh
-npm run dev
-```
+### Setup
 
-## Build
+## 🤝 Contributing
 
-```sh
-npm run  build
-```
-        <Route
-          path="/cars/reservation/:id"
-          element={(
-            <PrivateRoutes>
-              <Reservation />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/reserve"
-          element={(
-            <PrivateRoutes>
-              <Reserve />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/my_reservations"
-          element={(
-            <PrivateRoutes>
-              <MyReservations />
-            </PrivateRoutes>
-          )}
-        />
-        <Route
-          path="/my_reservations/reservation/:id"
-          element={(
-            <PrivateRoutes>
-              <Reservation />
-            </PrivateRoutes>
-          )}
-        />
+Contributions, issues, and feature requests are welcome!
 
-     ``` {user && user.id && (
-        <div className="flex justify-center items-center flex-col">
-          <img alt={user.name} src={user.photo} className="p-1 w-20 h-20 object-cover rounded-full ring-2 ring-gray-300" />
-          <h2 className="pt-3">{user.name}</h2>
-          <h2 className="text-sm">{user.email}</h2>
-        </div>
-      )}```
+Feel free to check the [issues page](../../issues/).
 
-```
-  <Route
-    path="/add_car"
-    element={(
-      <PrivateRoutes requiresAdmin>
-        <AddHouseForm />
-      </PrivateRoutes>
-    )}
-  />
-  <Route
-    path="/delete_car"
-    element={(
-      <PrivateRoutes requiresAdmin>
-        <DeleteHouse />
-      </PrivateRoutes>
-    )}
-  />
-```
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
