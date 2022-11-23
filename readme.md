@@ -6,7 +6,7 @@
 
 ## Backend Repository
 
-[GitHub Link](https://github.com/indigodavid/ezCar_backend)
+[GitHub Link](https://github.com/NduatiKagiri/airbnb-backend)
 
 ## Website Mockup
 
@@ -44,8 +44,8 @@ To get a local copy up and running follow these simple example steps.
 
 #### Open terminal
 
-    git clone git@github.com:indigodavid/ezCar_frontend.git
-    cd ezCar_frontend
+    git clone https://github.com/NduatiKagiri/airbnb-frontend.git
+    cd  airbnb_frontend
 
 ### Install
     npm install
@@ -59,7 +59,7 @@ To get a local copy up and running follow these simple example steps.
 
 [Front-end Vercel Deployment](https://ez-car-frontend-1ojf.vercel.app/)
 
-[Back-end Heroku Deployment](https://ezcar-backend.herokuapp.com/)
+[Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
 
 ## Kanban Board
 
@@ -73,10 +73,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Final Team members
 
-- Arnaud Bandonkeye
-- Julio Gagliardi
-- Darik Mohammed
-- David Vera
+- John Nduati Kagiri
+- Brenda Wihogora
+- Jesse Uzoma
+
 
 ## Authors
 
