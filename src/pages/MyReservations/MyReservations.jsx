@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CarCard from '../../components/Cars/CarCard';
-import getCars from '../../redux/actions/Car/getCars';
+import CarCard from '../../components/Houses/HouseCard';
+import getCars from '../../redux/actions/House/getHouses';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
 function MyReservations() {
