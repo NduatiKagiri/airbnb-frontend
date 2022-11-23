@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Footer from '../Footer/Footer';
 import Logo from '../Logo/Logo';
-import LogOut from '../Buttons/LogOut';
 
 const Navbar = (props) => {
   const { open } = props;
@@ -12,13 +11,16 @@ const Navbar = (props) => {
   return (
     <nav className={open ? '' : '-translate-x-48'}>
       <Logo />
-
+      {user && user.id && (
+        <div className="flex justify-center items-center flex-col">
+          <img alt={user.name} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzmq-qZ59s8d_kkqQ0ym3w2PuGuvKR6ZNB5AdLKFqA2Q&s" className="p-1 w-20 h-20 object-cover rounded-full ring-2 ring-gray-300" />
+          <h2 className="pt-3">{user.name}</h2>
+          <h2 className="text-sm">{user.email}</h2>
+        </div>
+      )}
       <ul>
         <li>
-          <NavLink to="cars">House</NavLink>
-        </li>
-        <li>
-          <NavLink to="reserve">Reserve</NavLink>
+          <NavLink to="houses">Houses</NavLink>
         </li>
         <li>
           <NavLink to="my_reservations">My Reservations</NavLink>
@@ -26,16 +28,13 @@ const Navbar = (props) => {
         {user && user.role === 'admin' && (
           <>
             <li>
-              <NavLink to="add_car">Add Car</NavLink>
+              <NavLink to="add_house">Add House</NavLink>
             </li>
             <li>
-              <NavLink to="delete_car">Delete Car</NavLink>
+              <NavLink to="delete_house">Delete House</NavLink>
             </li>
           </>
         )}
-        <li>
-          <LogOut />
-        </li>
       </ul>
       <Footer />
     </nav>

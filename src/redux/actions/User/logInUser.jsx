@@ -10,9 +10,9 @@ const logInUser = createAsyncThunk('LOG_IN', async (userinfo) => {
     },
     body: JSON.stringify(userinfo),
   });
-  localStorage.setItem('token', response.headers.get('Authorization'));
-  const user = await response.json();
-  return user;
+  const resp = await response.json();
+  localStorage.setItem('token', resp.token);
+  return resp.user;
 });
 
 export default logInUser;

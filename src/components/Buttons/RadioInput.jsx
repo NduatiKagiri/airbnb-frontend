@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function RadioInput(props) {
   const {
-    id, name, carType, carPrice, scrollPage,
+    id, name, houseLocation, housePrice, scrollPage,
   } = props;
   return (
     <li>
@@ -24,10 +24,10 @@ function RadioInput(props) {
       >
         <div className="block">
           <div className="w-full text-lg font-semibold">{name}</div>
-          <div className="w-full">{carType}</div>
+          <div className="w-full">{houseLocation}</div>
           <div className="w-full text-xs">
             $
-            {carPrice}
+            {housePrice}
             /day
           </div>
         </div>
@@ -54,7 +54,7 @@ export default RadioInput;
 RadioInput.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  carType: PropTypes.string.isRequired,
-  carPrice: PropTypes.number.isRequired,
+  houseLocation: PropTypes.string.isRequired,
+  housePrice: PropTypes.number.isRequired,
   scrollPage: PropTypes.func.isRequired,
 };

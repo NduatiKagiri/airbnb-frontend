@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import logInUser from '../actions/User/logInUser';
-import logOutUser from '../actions/User/logOutUser';
 import signUpUser from '../actions/User/signUpUser';
 import tokenLogger from '../actions/User/tokenLogger';
 
@@ -23,11 +22,6 @@ const userSlice = createSlice({
     builder.addCase(logInUser.rejected, (state) => ({
       ...state,
       status: 'failed',
-    }));
-    builder.addCase(logOutUser.fulfilled, (state, action) => ({
-      ...state,
-      status: action.message,
-      user: {},
     }));
     builder.addCase(signUpUser.fulfilled, (state, action) => ({
       ...state,

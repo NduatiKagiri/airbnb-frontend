@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import deleteCars from '../../redux/actions/House/deleteHouse';
+import deleteHouses from '../../redux/actions/House/deleteHouses';
 
 function HouseCard(props) {
   const dispatch = useDispatch();
@@ -12,17 +12,18 @@ function HouseCard(props) {
     id,
     img,
     name,
+    houseLocation,
     housePrice,
     reservationDate,
     reservation,
-    deleteCar,
+    deleteHouse,
   } = props;
-  const reservationLink = `/cars/reservation/${id}`;
+  const reservationLink = `/${id}/details`;
 
   const handleDelete = (e, id) => {
     e.preventDefault();
     location.state = {};
-    dispatch(deleteCars(id));
+    dispatch(deleteHouses(id));
   };
 
   return (
@@ -36,31 +37,27 @@ function HouseCard(props) {
         <div className="p-5">
           <h1 className=" text-xl">
             {name}
-            {' '}
-            (
-            {housePrice}
-            )
           </h1>
-          {!deleteCar && <p className=" text-sm">{carType}</p>}
+          {!deleteHouse && <p className=" text-sm">{houseLocation}</p>}
           {reservation && (
             <div className="bg-lime-400 self-end p-2 rounded-full">
               <p>{reservationDate}</p>
             </div>
           )}
-          {!reservation && !deleteCar && (
+          {!reservation && !deleteHouse && (
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
               $
               {housePrice}
-              /day
+              /night
             </p>
           )}
-          {deleteCar && (
+          {deleteHouse && (
             <button
               className=" bg-red-400 self-stretch p-2 rounded-full mt-4 hover:bg-red-600 active:bg-red-200"
               type="button"
               onClick={(e) => handleDelete(e, id)}
             >
-              Delete Car
+              Delete House
             </button>
           )}
         </div>
@@ -75,16 +72,15 @@ HouseCard.propTypes = {
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  carType: PropTypes.string.isRequired,
-  carBrand: PropTypes.string.isRequired,
-  carPrice: PropTypes.number.isRequired,
+  houseLocation: PropTypes.string.isRequired,
+  housePrice: PropTypes.number.isRequired,
   reservationDate: PropTypes.string,
   reservation: PropTypes.bool,
-  deleteCar: PropTypes.bool,
+  deleteHouse: PropTypes.bool,
 };
 
 HouseCard.defaultProps = {
   reservationDate: String(Date.now()),
   reservation: false,
-  deleteCar: false,
+  deleteHouse: false,
 };

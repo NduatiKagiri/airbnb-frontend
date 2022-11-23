@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logInUser from '../../redux/actions/User/logInUser';
@@ -20,28 +20,15 @@ export default function LogIn() {
       username: data.username,
     };
     dispatch(logInUser(userInfo));
-    console.log(user)
 
     setTimeout(() => {
-
-      if (user.status  === 'success') {
+      if (user.status === 'success') {
         navigate('/houses');
       } else {
         navigate('/');
       }
     }, 1500);
   };
-
-  // useEffect(() => {
-
-
-  //       navigate( '/houses');
-  //     } else {
-  //       navigate('/');
-
-  //   }
-
-  // }, [dispatch,navigate ]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>

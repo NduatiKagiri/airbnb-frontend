@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BASE_URL,HOUSE } from '../../../navigation/routes';
+import { BASE_URL, HOUSES } from '../../../navigation/routes';
 
-const deleteCars = createAsyncThunk('cars/DELETE', async (carId) => {
+const deleteHouses = createAsyncThunk('cars/DELETE', async (houseId) => {
   const token = localStorage.getItem('token');
   if (token) {
     try {
-      const response = await fetch(`${BASE_URL + HOUSE}/${carId}`, {
+      const response = await fetch(`${BASE_URL + HOUSES}/${houseId}`, {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',
@@ -13,7 +13,7 @@ const deleteCars = createAsyncThunk('cars/DELETE', async (carId) => {
           Authorization: token,
         },
       });
-      return response.ok ? carId : null;
+      return response.ok ? houseId : null;
     } catch (e) {
       return e.errors;
     }
@@ -21,4 +21,4 @@ const deleteCars = createAsyncThunk('cars/DELETE', async (carId) => {
   return [];
 });
 
-export default deleteCars;
+export default deleteHouses;

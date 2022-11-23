@@ -3,7 +3,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-// import { Progress } from 'flowbite-react';
 import signUpUser from '../../redux/actions/User/signUpUser';
 
 export default function SignUp() {
@@ -12,12 +11,12 @@ export default function SignUp() {
   const formRef = useRef();
   const user = useSelector((state) => state.user);
   const [errorMessage, setErrorMessage] = useState('');
+  const [selectedDay, setSelectedDay] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
-
     const userInfo = {
       name: data.name,
       email: data.email,
@@ -25,21 +24,19 @@ export default function SignUp() {
     };
     dispatch(signUpUser(userInfo));
   };
-
   useEffect(() => {
     if (user.status === 'success') {
       try {
         if (user.user.error) {
           setErrorMessage(user.user.error);
         } else {
-          navigate('/houses');
+          navigate('/');
         }
       } catch (e) {
         setErrorMessage(e.error);
       }
     }
   }, [navigate, user]);
-
 
   return (
     <div className="splash">
@@ -62,7 +59,6 @@ export default function SignUp() {
               Name
             </label>
           </div>
-
           <div className="field group">
             <input
               type="email"

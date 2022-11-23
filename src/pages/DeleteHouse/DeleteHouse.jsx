@@ -3,13 +3,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import CarCard from '../../components/House/HouseCard';
-import getCars from '../../redux/actions/House/getHouse';
+import HouseCard from '../../components/Houses/HouseCard';
+import getHouses from '../../redux/actions/House/getHouses';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
-export default function DeleteCar() {
+export default function DeleteHouse() {
   const dispatch = useDispatch();
-  const { cars } = useSelector((state) => state.cars);
+  const { houses } = useSelector((state) => state.houses);
 
   const responsive = {
     superLargeDesktop: {
@@ -32,39 +32,37 @@ export default function DeleteCar() {
   };
 
   useEffect(() => {
-    dispatch(getCars());
+    dispatch(getHouses());
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(getReservations());
-  }, [dispatch, cars]);
+  }, [dispatch, houses]);
 
   return (
     <div className="pb-8 px-4 md:px-16">
       <div className="flex flex-col items-center justify-center py-8 md:py-16 md:pb-32">
         <h1 className=" text-4xl font-bold text-center">
-          List of cars created
+          List of houses created
         </h1>
         <p className=" text-xs text-slate-400">
-          Please select the car to delete
+          Please select the house to delete
         </p>
       </div>
       <Carousel responsive={responsive} showDots>
-        {cars.length > 0 ? (cars.map((car) => (
-          <div key={car.id}>
-            <CarCard
-              key={car.id}
-              id={car.id}
-              img={car.image}
-              name={car.name}
-              carType={car.car_type}
-              carBrand={car.brand}
-              carPrice={car.fee_per_day}
-              carColor={car.color}
-              deleteCar
+        {houses.length > 0 ? (houses.map((house) => (
+          <div key={house.id}>
+            <HouseCard
+              key={house.id}
+              id={house.id}
+              img={house.photo}
+              name={house.name}
+              houseType={house.location}
+              houseBrand={house.price}
+              deleteHouse
             />
           </div>
-        ))) : <Loading message="Loading Cars" /> }
+        ))) : <Loading message="Loading Houses" /> }
       </Carousel>
     </div>
   );

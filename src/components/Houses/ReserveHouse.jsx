@@ -16,7 +16,7 @@ function ReserveHouse(props) {
   const navigate = useNavigate();
 
   const {
-    id, name, HouseType, HousePrice, ReserveOpener, handleClick,
+    id, name, houseLocation, housePrice, ReserveOpener, handleClick,
   } = props;
 
   const defaultFrom = {
@@ -35,7 +35,7 @@ function ReserveHouse(props) {
     to: defaultTo,
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
-  const [Total, setTotal] = useState(HousePrice);
+  const [Total, setTotal] = useState(housePrice);
 
   useEffect(() => {
     const date1 = new Date(
@@ -55,17 +55,17 @@ function ReserveHouse(props) {
 
     // To calculate the no. of days between two dates
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    const value = (differenceInDays + 1) * HousePrice;
+    const value = (differenceInDays + 1) * housePrice;
     setTotal(value);
-  }, [selectedDayRange, Total, HousePrice]);
+  }, [selectedDayRange, Total, housePrice]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
     const reservationInfo = {
-      reservation_date: reservationDate,
-      due_date: dueDate,
+      date_in: reservationDate,
+      date_out: dueDate,
       house_id: id,
     };
     dispatch(addReservations(reservationInfo));
@@ -96,20 +96,14 @@ function ReserveHouse(props) {
           &quot;
         </h1>
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
-          <p className=" ">{HouseType}</p>
+          <p className=" ">{houseLocation}</p>
           <p className=" ">
             $
-            {HousePrice}
-            /Day
+            {housePrice}
+            /Night
           </p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <Calendar
-            value={selectedDayRange}
-            onChange={setSelectedDayRange}
-            shouldHighlightWeekends
-            minimumDate={utils().getToday()}
-          />
           <div className=" py-2 px-2 bg-slate-400 flex justify-between">
             <p className=" ">Total Price:</p>
             <p className=" ">
@@ -120,6 +114,12 @@ function ReserveHouse(props) {
           <button type="submit" className=" self-end submit-button">
             Submit
           </button>
+          <Calendar
+            value={selectedDayRange}
+            onChange={setSelectedDayRange}
+            shouldHighlightWeekends
+            minimumDate={utils().getToday()}
+          />
         </form>
       </div>
     </div>
@@ -131,8 +131,8 @@ export default ReserveHouse;
 ReserveHouse.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  carType: PropTypes.string.isRequired,
-  carPrice: PropTypes.number.isRequired,
+  houseLocation: PropTypes.string.isRequired,
+  housePrice: PropTypes.number.isRequired,
   ReserveOpener: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

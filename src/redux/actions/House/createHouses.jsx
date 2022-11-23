@@ -1,22 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BASE_URL, HOUSE } from '../../../navigation/routes';
+import { BASE_URL, HOUSES } from '../../../navigation/routes';
 
-const getHouse = createAsyncThunk('cars/GET', async () => {
+const createHouses = createAsyncThunk('houses/CREATE', async (houseInfo) => {
   const token = localStorage.getItem('token');
   if (token) {
-    const response = await fetch(`${BASE_URL + HOUSE}`, {
-      method: 'GET',
+    const response = await fetch(`${BASE_URL + HOUSES}`, {
+      method: 'POST',
       headers: {
         'content-type': 'application/json',
         accept: 'application/json',
         Authorization: token,
       },
+      body: JSON.stringify(houseInfo),
     });
     const house = await response.json();
-    console.log(house)
     return house;
   }
   return [];
 });
 
-export default getHouse;
+export default createHouses;

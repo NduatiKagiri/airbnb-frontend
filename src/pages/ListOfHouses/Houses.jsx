@@ -3,15 +3,15 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import HouseCard from '../../components/House/HouseCard';
-import getHouse from '../../redux/actions/House/getHouse';
+import HouseCard from '../../components/Houses/HouseCard';
+import getHouses from '../../redux/actions/House/getHouses';
 
-function House() {
+function Houses() {
   const dispatch = useDispatch();
-  const { houses } = useSelector((state) => state.house);
+  const { houses } = useSelector((state) => state.houses);
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+      // the naming can be any, depends on you
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -30,17 +30,17 @@ function House() {
   };
 
   useEffect(() => {
-    dispatch(getHouse());
+    dispatch(getHouses());
   }, [dispatch]);
 
   return (
     <div className="pb-8 px-4 md:px-16">
       <div className="flex flex-col items-center justify-center py-8 md:py-16 md:pb-32">
         <h1 className=" text-4xl font-bold text-center">
-          Latest Model Houses Available.
+          Houses Available.
         </h1>
         <p className=" text-xs text-slate-400">
-          Please select your car for reservation.
+          Please select your house for reservation.
         </p>
       </div>
       {houses.length > 0
@@ -51,17 +51,18 @@ function House() {
                 <HouseCard
                   key={house.id}
                   id={house.id}
-                  img={house.image}
+                  img={house.photo}
                   name={house.name}
                   housePrice={house.price}
+                  houseLocation={house.location}
                 />
               </div>
             ))}
           </Carousel>
         )
-        : <Loading message="Loading Cars" /> }
+        : <Loading message="Loading Houses" /> }
     </div>
   );
 }
 
-export default House;
+export default Houses;

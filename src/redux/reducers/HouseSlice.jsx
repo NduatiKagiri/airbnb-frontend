@@ -1,59 +1,59 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getHouse from '../actions/House/getHouse';
-import createHouse from '../actions/House/createHouse';
-import deleteHouse from '../actions/House/deleteHouse';
+import getHouses from '../actions/House/getHouses';
+import createHouses from '../actions/House/createHouses';
+import deleteHouses from '../actions/House/deleteHouses';
 
 const initialState = {
   status: 'idle',
-  cars: [],
+  houses: [],
 };
 
 const houseSlice = createSlice({
-  name: 'house',
+  name: 'houses',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getHouse.fulfilled, (state, action) => ({
+    builder.addCase(getHouses.fulfilled, (state, action) => ({
       ...state,
       status: 'success',
-      cars: action.payload,
+      houses: action.payload,
     }));
-    builder.addCase(getHouse.pending, (state) => ({
+    builder.addCase(getHouses.pending, (state) => ({
       ...state,
       status: 'loading',
     }));
-    builder.addCase(getHouse.rejected, (state) => ({
+    builder.addCase(getHouses.rejected, (state) => ({
       ...state,
       status: 'failed',
     }));
-    builder.addCase(createHouse.fulfilled, (state, action) => ({
+    builder.addCase(createHouses.fulfilled, (state, action) => ({
       ...state,
       status: 'success',
-      cars: [...state.cars, action.payload],
+      houses: [...state.houses, action.payload],
     }));
-    builder.addCase(createHouse.pending, (state) => ({
+    builder.addCase(createHouses.pending, (state) => ({
       ...state,
       status: 'loading',
     }));
-    builder.addCase(createHouse.rejected, (state) => ({
+    builder.addCase(createHouses.rejected, (state) => ({
       ...state,
       status: 'failed',
     }));
-    builder.addCase(deleteHouse.fulfilled, (state, action) => ({
+    builder.addCase(deleteHouses.fulfilled, (state, action) => ({
       ...state,
       status: 'success',
-      cars: state.cars.filter((car) => car.id !== action.payload),
+      houses: state.houses.filter((house) => house.id !== action.payload),
     }));
-    builder.addCase(deleteHouse.pending, (state) => ({
+    builder.addCase(deleteHouses.pending, (state) => ({
       ...state,
       status: 'loading',
     }));
-    builder.addCase(deleteHouse.rejected, (state) => ({
+    builder.addCase(deleteHouses.rejected, (state) => ({
       ...state,
       status: 'failed',
     }));
   },
 });
 
-export const houseRedux = houseSlice.actions;
+export const housesRedux = houseSlice.actions;
 export default houseSlice.reducer;
