@@ -83,7 +83,7 @@ export default function SignUp() {
           </div>
           <div className="field group">
             <input
-              type="text"username
+             type="text"username
               name="username"
               id="username"
               className="text-field peer"

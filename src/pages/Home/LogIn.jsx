@@ -53,7 +53,7 @@ export default function LogIn() {
         />
         <label
           htmlFor="username"
-          className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
+          className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-500 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
         >
           Username
         </label>
