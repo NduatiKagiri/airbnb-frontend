@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CarCard from '../../components/Houses/HouseCard';
-import getCars from '../../redux/actions/House/getHouses';
+import HouseCard from '../../components/Houses/HouseCard';
+import getHouses from '../../redux/actions/House/getHouses';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
 function MyReservations() {
   const dispatch = useDispatch();
   const { reservation } = useSelector((state) => state.reservations);
-  const { cars } = useSelector((state) => state.cars);
+  const { houses } = useSelector((state) => state.houses);
 
   useEffect(() => {
     dispatch(getReservations());
-    dispatch(getCars());
-  }, [dispatch, cars.cars]);
+    dispatch(getHouses());
+  }, [dispatch, houses.houses]);
 
-  const car = (id) => {
-    const filterdCar = cars.filter((car) => car.id === id);
+  const house = (id) => {
+    const filterdHouse = houses.filter((house) => hhouse.id === id);
     return filterdCar;
   };
 
@@ -26,21 +26,21 @@ function MyReservations() {
         <p className=" text-xs text-slate-400">Lists of all reservations.</p>
       </div>
       <div className="grid grid-cols-responsive px gap-4 justify-items-center">
-        {reservation.length > 0 && cars.length > 0 ? (reservation.map((res) => {
-          const reservedCar = car(res.house_id)[0];
+        {reservation.length > 0 && houses.length > 0 ? (reservation.map((res) => {
+          const reservedHouse = house(res.house_id)[0];
           return (
-            <CarCard
+            <HouseCard
               key={res.id}
-              id={reservedCar.id}
-              img={reservedCar.photo}
-              name={reservedCar.name}
-              carPrice={reservedCar.price}
-              carLocation={reservedCar.location}
+              id={reservedHouse.id}
+              img={reservedHouse.photo}
+              name={reservedHouse.name}
+              housePrice={reservedHouse.price}
+              houseLocation={reservedHouse.location}
               reservation
               reservationDate={res.date_out}
             />
           );
-        })) : <div>No Reserved Cars</div> }
+        })) : <div>No Reserved Houses</div> }
       </div>
     </div>
   );
