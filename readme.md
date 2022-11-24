@@ -29,7 +29,7 @@
 
 ## Live Demo
 
-[eZ_car](https://ezcar.netlify.app/)
+[airbnb](https://airbnb.nduatikagiri.co.ke/)
 
 
 ## Getting Started
@@ -55,22 +55,22 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-[Front-end Netlify Deployment](https://ezcar.netlify.app/)
+[Front-end Netlify Deployment](https://airbnb.nduatikagiri.co.ke//)
 
-[Front-end Vercel Deployment](https://ez-car-frontend-1ojf.vercel.app/)
+
 
 [Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
 
 ## Kanban Board
 
 ### Link
-
-[GitHub Project](https://github.com/indigodavid/ezCar_backend/projects/1)
-
-### Initial State Project Link
-
-[GitHub First Issue](https://github.com/indigodavid/ezCar_backend/issues/22)
-
+<!--  -->
+<!-- <!-- [GitHub Project](https://github.com/indigodavid/ezCar_backend/projects/1) --> -->
+<!--  -->
+<!-- ### Initial State Project Link -->
+<!--  -->
+<!-- <!-- [GitHub First Issue](https://github.com/indigodavid/ezCar_backend/issues/22) --> -->
+<!--  -->
 ### Final Team members
 
 - John Nduati Kagiri
