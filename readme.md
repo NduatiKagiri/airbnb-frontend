@@ -80,23 +80,27 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
+
+
+👤 **Uzoma Jesse**
+
+- GitHub: [@jesse](https://github.com/Brenda309)
+- Twitter: [@jesse](https://twitter.com/BrendaWihogora)
+- LinkedIn: [jesse uzoma](https://linkedin.com/in/BrendaWihogora/)
+
+
 👤 **John Nduati Kagiri**
 
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-ArnaudBand-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/NduatiKagiri/)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-john-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/NduatiKagiri/)
 - Twitter: [![Twitter Badge](https://img.shields.io/badge/-@ba104781-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-ArnaudBandonkeye-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)]()
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-john-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)]()
 
 👤 **Brenda Wihogora**
 
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-BregornOriginal-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Brenda309)
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Bregorn-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in//)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-brenda-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Brenda309)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-brenda-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-brenda-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in//)
 
-👤 **Jesse Uzoma**
-
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-darikmohammed-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/hedevedup)
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-r_darik-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-darikmohammed-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in//)
 
 
 
