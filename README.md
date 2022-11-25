@@ -65,7 +65,7 @@ To get a local copy up and running follow these simple example steps.
 [Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
 
 ## Kanban Board
-[kanban Board](https://github.com/users/NduatiKagiri/projects/6)
+[kanban Board](https://github.com/NduatiKagiri/airbnb-backend/issues/21)
 
 
 
