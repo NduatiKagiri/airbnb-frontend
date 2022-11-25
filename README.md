@@ -67,14 +67,8 @@ To get a local copy up and running follow these simple example steps.
 ## Kanban Board
 [kanban Board](https://github.com/users/NduatiKagiri/projects/6)
 
-### Link
-<!--  -->
-<!-- <!-- [GitHub Project](https://github.com/indigodavid/ezCar_backend/projects/1) --> -->
-<!--  -->
-<!-- ### Initial State Project Link -->
-<!--  -->
-<!-- <!-- [GitHub First Issue](https://github.com/indigodavid/ezCar_backend/issues/22) --> -->
-<!--  -->
+
+
 ### Final Team members
 
 - John Nduati Kagiri
@@ -83,8 +77,6 @@ To get a local copy up and running follow these simple example steps.
 
 
 ## Authors
-
-
 
 👤 **Uzoma Jesse**
 
